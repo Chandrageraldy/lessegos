@@ -34,8 +34,8 @@ namespace MWMAssignment
                         DataTable dt = new DataTable();
                         sda.Fill(dt);
 
-                        GridView1.DataSource = dt;
-                        GridView1.DataBind();
+                        categoryGrid.DataSource = dt;
+                        categoryGrid.DataBind();
                     }
                 }
             }
@@ -46,15 +46,40 @@ namespace MWMAssignment
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             con.Open();
 
-            string query = "insert into categoryTable(categoryName) values (@categoryName)";
+            string query = "INSERT INTO categoryTable(categoryName) VALUES (@categoryName)";
             SqlCommand command = new SqlCommand(query, con);
-
             command.Parameters.AddWithValue("@categoryName", categoryName.Text);
             command.ExecuteNonQuery();
 
             categoryName.Text = "";
 
+            con.Close();
             Response.Redirect("../ManageCategoriesAdminPage/ManageCategoriesAdminPage.aspx");
+        }
+
+        protected void deleteCategoryButton_Click(object sender, EventArgs e)
+        {
+            LinkButton btn = (LinkButton)sender;
+            string categoryId = btn.CommandArgument;
+
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            con.Open();
+
+            string query = "DELETE FROM categoryTable WHERE categoryId = @categoryId";
+            SqlCommand commandSection = new SqlCommand(query, con);
+            commandSection.Parameters.AddWithValue("@categoryId", categoryId);
+            commandSection.ExecuteNonQuery();
+
+            con.Close();
+            Response.Redirect("../ManageCategoriesAdminPage/ManageCategoriesAdminPage.aspx");
+        }
+
+        protected void editCategoryButton_Click(object sender, EventArgs e)
+        {
+            LinkButton btn = (LinkButton)sender;
+            int categoryId = Convert.ToInt32(btn.CommandArgument);
+
+            
         }
     }
 }

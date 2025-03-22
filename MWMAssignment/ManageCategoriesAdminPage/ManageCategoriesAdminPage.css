@@ -4,7 +4,7 @@
     padding-bottom: 3rem;
     background-color: #F7F7F7;
 }
-
+    /*HEADER*/
     .manage-categories-page .header-container {
         width: 85%;
         margin: auto;
@@ -26,12 +26,12 @@
         border: none;
     }
 
+    /*MANAGE CATEGORIES CONTAINER*/
     .manage-categories-page .manage-categories-container {
         width: 85%;
         background-color: white;
         margin: auto;
         min-height: 65vh;
-        padding-bottom: 1.5rem;
     }
 
     /*MODAL*/
@@ -69,6 +69,27 @@
         margin-top: 1rem;
     }
 
+    /*TABLE*/
+    .manage-categories-page .action-column {
+        text-align: right;
+    }
+
+    .manage-categories-page .fa-solid {
+        margin-right: 1rem;
+    }
+
+    .manage-categories-page .edit-category-button {
+        color: black;
+    }
+
+    .manage-categories-page .delete-category-button {
+        color: red;
+    }
+
+    .manage-categories-page th {
+        background-color: #f6f6f6;
+    }
+
 @media (max-width: 840px) {
     .manage-categories-page .header-container {
         width: 95%;
@@ -86,5 +107,9 @@
         margin-bottom: 1rem;
         border: none;
         font-size: 0.9rem;
+    }
+
+    .manage-categories-page .manage-categories-container {
+        width: 95%;
     }
 }

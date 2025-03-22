@@ -34,7 +34,7 @@
                             <p class="text-field-title">IMAGE:</p>
                             <asp:FileUpload runat="server" class="form-control" ID="categoryUploadedImage" />
                         </div>
-                        <asp:Button runat="server" class="create-category-button" Text="Create Category" ID="createCategoryButton" OnClick="createCategoryButton_Click"/>
+                        <asp:Button runat="server" class="create-category-button" Text="Create Category" ID="createCategoryButton" OnClick="createCategoryButton_Click" />
                     </div>
                 </div>
             </div>
@@ -44,15 +44,16 @@
         <!-- MANAGE CATEGORIES CONTAINER -->
         <section>
             <div class="manage-categories-container">
-                <asp:GridView ID="GridView1" runat="server" CssClass="table table-bordered"
+                <asp:GridView ID="categoryGrid" runat="server" class="table"
                     AutoGenerateColumns="False" EmptyDataText="No records found.">
                     <Columns>
+                        <asp:BoundField DataField="categoryId" HeaderText="ID"/>
                         <asp:BoundField DataField="categoryName" HeaderText="Category Name" />
-                        <asp:TemplateField HeaderText="Actions">
+                        <asp:TemplateField HeaderText="">
+                            <ItemStyle CssClass="action-column" />
                             <ItemTemplate>
-                                <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                                <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                                <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                                <asp:LinkButton runat="server" ID="editCategoryButton" CommandArgument='<%# Eval("categoryId") %>' OnClick="editCategoryButton_Click"><i class="fa-solid fa-pen-to-square edit-category-button"></i></asp:LinkButton>
+                                <asp:LinkButton runat="server" ID="deleteCategoryButton" CommandArgument='<%# Eval("categoryId") %>' OnClick="deleteCategoryButton_Click"><i class="fa-solid fa-trash delete-category-button"></i></asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
