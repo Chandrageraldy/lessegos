@@ -28,13 +28,13 @@
                         <h3>CREATE NEW CATEGORY</h3>
                         <div class="title-text-field-container">
                             <p class="text-field-title">CATEGORY TITLE:</p>
-                            <asp:TextBox runat="server" ID="productTitle" placeholder="" class="text-field" />
+                            <asp:TextBox runat="server" ID="categoryName" placeholder="" class="text-field" />
                         </div>
                         <div class="image-upload-container">
                             <p class="text-field-title">IMAGE:</p>
-                            <asp:FileUpload runat="server" class="form-control" ID="FrontUploadedImage" />
+                            <asp:FileUpload runat="server" class="form-control" ID="categoryUploadedImage" />
                         </div>
-                        <asp:Button runat="server" class="create-category-button" Text="Create Category" />
+                        <asp:Button runat="server" class="create-category-button" Text="Create Category" ID="createCategoryButton" OnClick="createCategoryButton_Click"/>
                     </div>
                 </div>
             </div>
@@ -47,10 +47,7 @@
                 <asp:GridView ID="GridView1" runat="server" CssClass="table table-bordered"
                     AutoGenerateColumns="False" EmptyDataText="No records found.">
                     <Columns>
-                        <asp:BoundField DataField="Day" HeaderText="Day" />
-                        <asp:BoundField DataField="ArticleName" HeaderText="Article Name" />
-                        <asp:BoundField DataField="Author" HeaderText="Author" />
-                        <asp:BoundField DataField="Shares" HeaderText="Shares" />
+                        <asp:BoundField DataField="categoryName" HeaderText="Category Name" />
                         <asp:TemplateField HeaderText="Actions">
                             <ItemTemplate>
                                 <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>

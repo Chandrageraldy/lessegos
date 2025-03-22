@@ -67,6 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\LessegosDB.mdf" />
+    <Content Include="App_Data\LessegosDB_log.ldf">
+      <DependentUpon>LessegosDB.mdf</DependentUpon>
+    </Content>
     <Content Include="Assets\brandAdminLogo.png" />
     <Content Include="Assets\brandLogo.png" />
     <Content Include="Assets\homeMiddle.png" />
@@ -108,6 +112,7 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="SQLConnectionString.aspx" />
     <Content Include="Web.config" />
     <Content Include="AuthPage\RegistrationPage.aspx" />
     <Content Include="AuthPage\LoginPage.aspx" />
@@ -189,6 +194,13 @@
     </Compile>
     <Compile Include="ProductDetailsPage\ProductDetailsPage.aspx.designer.cs">
       <DependentUpon>ProductDetailsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SQLConnectionString.aspx.cs">
+      <DependentUpon>SQLConnectionString.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SQLConnectionString.aspx.designer.cs">
+      <DependentUpon>SQLConnectionString.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
