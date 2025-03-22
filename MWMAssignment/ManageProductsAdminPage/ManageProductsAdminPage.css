@@ -1,0 +1,167 @@
+﻿.manage-products-page {
+    font-family: karla;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: #F7F7F7;
+}
+
+    .manage-products-page .header-container {
+        width: 85%;
+        margin: auto;
+    }
+
+    .manage-products-page h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        letter-spacing: 0.1rem;
+    }
+
+    .manage-products-page .create-new-button {
+        padding: 0.9rem;
+        background-color: black;
+        color: white;
+        font-weight: 300;
+        margin-bottom: 1rem;
+        border: none;
+    }
+
+    .manage-products-page .manage-products-container {
+        width: 85%;
+        background-color: white;
+        margin: auto;
+        min-height: 65vh;
+        padding-bottom: 1.5rem;
+    }
+
+    .manage-products-page .card-img-top {
+        width: 100%;
+        height: 15vw;
+        object-fit: cover;
+    }
+
+    /*CARD*/
+    .manage-products-page .card-body {
+        text-align: center;
+    }
+
+    .manage-products-page .product-name {
+        font-size: 1rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .manage-products-page .product-price {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .manage-products-page .edit-action-button {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        width: 100%;
+        background-color: transparent;
+        color: black;
+        font-weight: 300;
+        margin-bottom: 1rem;
+        border: solid 1px #EFEEEF;
+        border-radius: 0.3rem;
+    }
+
+    .manage-products-page .delete-action-button {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        width: 100%;
+        background-color: red;
+        color: white;
+        font-weight: 300;
+        margin-bottom: 1rem;
+        border: none;
+        border: solid 1px red;
+        border-radius: 0.3rem;
+    }
+
+    /*MODAL*/
+    .manage-products-page h3 {
+        font-family: karla;
+        font-weight: 700;
+        font-size: 1.5rem;
+        letter-spacing: 0.1rem;
+        margin-bottom: 1rem;
+    }
+
+    .manage-products-page .text-field-title {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+    }
+
+    .manage-products-page .text-field {
+        width: 100%;
+        height: 2.75rem;
+        text-indent: 0.7rem;
+        border-radius: 0.3rem;
+        border: 1px solid gray;
+        margin-bottom: 1rem;
+    }
+
+    .manage-products-page .category-dropdown {
+        width: 100%;
+        height: 2.75rem;
+        text-indent: 0.7rem;
+        border-radius: 0.3rem;
+        border: 1px solid gray;
+        margin-bottom: 1rem;
+    }
+
+    .manage-products-page .create-product-button {
+        padding: 0.7rem;
+        width: 100%;
+        background-color: black;
+        color: white;
+        font-weight: 300;
+        border: none;
+        border-radius: 0.4rem;
+    }
+
+    .manage-products-page .image-upload-container {
+        margin-bottom: 1rem;
+    }
+
+    @media (max-width: 840px) {
+        .manage-products-page .header-container {
+        width: 95%;
+    }
+
+    .manage-products-page h2 {
+        font-size: 1.2rem;
+    }
+
+    .manage-products-page .create-new-button {
+        padding: 0.6rem;
+        background-color: black;
+        color: white;
+        font-weight: 300;
+        margin-bottom: 1rem;
+        border: none;
+        font-size: 0.9rem;
+    }
+
+    .manage-products-page .manage-products-container {
+        width: 95%;
+    }
+
+    .manage-products-page .edit-action-button {
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+        font-size: 1rem;
+    }
+
+    .manage-products-page .delete-action-button {
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+        font-size: 1rem;
+    }
+}

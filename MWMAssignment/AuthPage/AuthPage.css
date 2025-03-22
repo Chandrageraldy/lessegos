@@ -1,0 +1,74 @@
+﻿.auth-page {
+    font-family: karla;
+}
+
+    .auth-page p {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+    }
+
+    .auth-page section {
+        width: 85%;
+        margin: auto;
+    }
+
+    .auth-page .auth-container {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .auth-page h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        letter-spacing: 0.1rem;
+    }
+
+    .auth-page .auth-text-field-container {
+        margin-bottom: 1rem;
+    }
+
+    .auth-page .auth-text-field {
+        width: 70%;
+        height: 2.75rem;
+        text-indent: 0.7rem;
+    }
+
+    .auth-page .auth-button {
+        margin-top: 1.5rem;
+        padding: 0.9rem;
+        width: 14rem;
+        background-color: black;
+        color: white;
+        font-weight: 300;
+        display: block;
+        margin-bottom: 1rem;
+        border: none;
+    }
+
+    .auth-page a {
+        font-weight: 600;
+        text-decoration: underline;
+        color: black;
+        font-size: 0.9rem;
+    }
+        
+@media (max-width: 840px) {
+    .auth-page section {
+        width: 95%;
+        margin: auto;
+    }
+
+    .auth-page .auth-text-field {
+        width: 100%;
+    }
+
+    .auth-page .auth-button {
+        padding: 0.75rem;
+    }
+
+    .auth-page h2 {
+        font-size: 2rem;
+    }
+}
