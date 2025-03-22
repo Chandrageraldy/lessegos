@@ -15,6 +15,24 @@ namespace MWMAssignment
     {
 
         /// <summary>
+        /// authErrorMessageContainer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl authErrorMessageContainer;
+
+        /// <summary>
+        /// authErrorMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label authErrorMessage;
+
+        /// <summary>
         /// firstName control.
         /// </summary>
         /// <remarks>
@@ -33,6 +51,15 @@ namespace MWMAssignment
         protected global::System.Web.UI.WebControls.TextBox lastName;
 
         /// <summary>
+        /// userName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox userName;
+
+        /// <summary>
         /// email control.
         /// </summary>
         /// <remarks>
@@ -49,5 +76,14 @@ namespace MWMAssignment
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox password;
+
+        /// <summary>
+        /// createAccountButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button createAccountButton;
     }
 }
