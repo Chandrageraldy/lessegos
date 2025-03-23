@@ -93,15 +93,23 @@
     }
 
     .manage-products-page .text-field-title {
-        margin-top: 0;
-        margin-bottom: 0.5rem;
+        margin: 0;
         font-weight: 700;
+        align-self: center;
     }
 
     .manage-products-page .text-field {
         width: 100%;
         height: 2.75rem;
         text-indent: 0.7rem;
+        border-radius: 0.3rem;
+        border: 1px solid gray;
+        margin-bottom: 1rem;
+    }
+
+    .manage-products-page .text-field-multiline {
+        width: 100%;
+        height: 2.75rem;
         border-radius: 0.3rem;
         border: 1px solid gray;
         margin-bottom: 1rem;
@@ -130,8 +138,25 @@
         margin-bottom: 1rem;
     }
 
-    @media (max-width: 840px) {
-        .manage-products-page .header-container {
+    .manage-products-page .title-row {
+        display: flex;
+        margin-bottom: 0.5rem;
+        align-items: center;
+    }
+
+    .manage-products-page .validation-message {
+        color: red;
+    }
+
+    .manage-products-page .image-validation-message {
+        color: red;
+        font-size: 1rem;
+        font-weight: 400;
+        margin: 0;
+    }
+
+@media (max-width: 840px) {
+    .manage-products-page .header-container {
         width: 95%;
     }
 

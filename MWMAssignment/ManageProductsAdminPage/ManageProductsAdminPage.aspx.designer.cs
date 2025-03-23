@@ -33,75 +33,84 @@ namespace MWMAssignment
         protected global::System.Web.UI.WebControls.TextBox productDesc;
 
         /// <summary>
-        /// FrontUploadedImage control.
+        /// productFrontImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FrontUploadedImage;
+        protected global::System.Web.UI.WebControls.FileUpload productFrontImage;
 
         /// <summary>
-        /// BackUploadedImage control.
+        /// productBackImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload BackUploadedImage;
+        protected global::System.Web.UI.WebControls.FileUpload productBackImage;
 
         /// <summary>
-        /// Alt1UploadedImage control.
+        /// productAlt1Image control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload Alt1UploadedImage;
+        protected global::System.Web.UI.WebControls.FileUpload productAlt1Image;
 
         /// <summary>
-        /// Alt2UploadedImager control.
+        /// productAlt2Image control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload Alt2UploadedImager;
+        protected global::System.Web.UI.WebControls.FileUpload productAlt2Image;
 
         /// <summary>
-        /// Ssize control.
+        /// productSSizeQuantity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Ssize;
+        protected global::System.Web.UI.WebControls.TextBox productSSizeQuantity;
 
         /// <summary>
-        /// MSize control.
+        /// productMSizeQuantity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox MSize;
+        protected global::System.Web.UI.WebControls.TextBox productMSizeQuantity;
 
         /// <summary>
-        /// LSize control.
+        /// productLSizeQuantity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox LSize;
+        protected global::System.Web.UI.WebControls.TextBox productLSizeQuantity;
 
         /// <summary>
-        /// XLSize control.
+        /// productXLSizeQuantity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox XLSize;
+        protected global::System.Web.UI.WebControls.TextBox productXLSizeQuantity;
+
+        /// <summary>
+        /// categoryDropdown control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList categoryDropdown;
     }
 }

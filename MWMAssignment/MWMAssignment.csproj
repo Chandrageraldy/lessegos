@@ -103,6 +103,7 @@
     <Content Include="ManageCategoriesAdminPage\ManageCategoriesAdminPage.css" />
     <Content Include="ManageProductsAdminPage\ManageProductsAdminPage.css" />
     <Content Include="HomePage\HomePage.css" />
+    <Content Include="ManageUsersAdminPage\ManageUsersAdminPage.css" />
     <Content Include="MasterAdminPage.css" />
     <Content Include="MasterPage.css" />
     <Content Include="ProductDetailsPage\ProductDetailsPage.css" />
@@ -122,6 +123,10 @@
     <Content Include="ManageProductsAdminPage\ManageProductsAdminPage.aspx" />
     <Content Include="ManageCategoriesAdminPage\ManageCategoriesAdminPage.aspx" />
     <Content Include="ProductDetailsPage\ProductDetailsPage.aspx" />
+    <Content Include="CategoriesPage\CategoriesPage.aspx" />
+    <Content Include="ShopPage\ShopPage.aspx" />
+    <Content Include="ShoppingCartPage\ShoppingCartPage.aspx" />
+    <Content Include="ManageUsersAdminPage\ManageUsersAdminPage.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MasterAdminPage.Master.cs">
@@ -201,6 +206,34 @@
     </Compile>
     <Compile Include="SQLConnectionString.aspx.designer.cs">
       <DependentUpon>SQLConnectionString.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CategoriesPage\CategoriesPage.aspx.cs">
+      <DependentUpon>CategoriesPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CategoriesPage\CategoriesPage.aspx.designer.cs">
+      <DependentUpon>CategoriesPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShopPage\ShopPage.aspx.cs">
+      <DependentUpon>ShopPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShopPage\ShopPage.aspx.designer.cs">
+      <DependentUpon>ShopPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShoppingCartPage\ShoppingCartPage.aspx.cs">
+      <DependentUpon>ShoppingCartPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShoppingCartPage\ShoppingCartPage.aspx.designer.cs">
+      <DependentUpon>ShoppingCartPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageUsersAdminPage\ManageUsersAdminPage.aspx.cs">
+      <DependentUpon>ManageUsersAdminPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageUsersAdminPage\ManageUsersAdminPage.aspx.designer.cs">
+      <DependentUpon>ManageUsersAdminPage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

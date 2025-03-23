@@ -16,7 +16,17 @@ namespace MWMAssignment
 
         protected void browseAllButton_Click(object sender, EventArgs e)
         {
-            
+            Response.Redirect("../ShopPage/ShopPage.aspx");
+        }
+
+        protected void shopNowButton1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../ShopPage/ShopPage.aspx");
+        }
+
+        protected void shopNowButton2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../ShopPage/ShopPage.aspx");
         }
     }
 }

@@ -43,11 +43,17 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="../ManageCategoriesAdminPage/ManageCategoriesAdminPage.aspx">MANAGE CATEGORIES</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../ManageUsersAdminPage/ManageUsersAdminPage.aspx">MANAGE USERS</a>
+                            </li>
                         </ul>
                         <!-- RIGHT NAVIGATION BAR -->
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="../AuthAdminPage/LoginAdminPage.aspx">SIGN IN</a>
+                                <asp:LinkButton runat="server" class="nav-link" CausesValidation="false" ID="signInButton" OnClick="signInButton_Click">SIGN IN</asp:LinkButton>
+                            </li>
+                            <li class="nav-item">
+                                <asp:LinkButton runat="server" class="nav-link" CausesValidation="false" ID="profileButton"></asp:LinkButton>
                             </li>
                         </ul>
                     </div>

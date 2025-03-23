@@ -15,40 +15,13 @@ namespace MWMAssignment
     {
 
         /// <summary>
-        /// smallSizeButton control.
+        /// sizeDropdown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button smallSizeButton;
-
-        /// <summary>
-        /// mediumSizeButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button mediumSizeButton;
-
-        /// <summary>
-        /// largeSizeButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button largeSizeButton;
-
-        /// <summary>
-        /// extraLargeSizeButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button extraLargeSizeButton;
+        protected global::System.Web.UI.WebControls.DropDownList sizeDropdown;
 
         /// <summary>
         /// productQuantity control.
@@ -58,5 +31,14 @@ namespace MWMAssignment
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox productQuantity;
+
+        /// <summary>
+        /// addToCartButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button addToCartButton;
     }
 }

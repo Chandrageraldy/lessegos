@@ -16,22 +16,12 @@ namespace MWMAssignment
             }
         }
 
-        protected void smallSizeButton_Click(object sender, EventArgs e)
+        protected void addToCartButton_Click(object sender, EventArgs e)
         {
 
         }
 
-        protected void mediumSizeButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void largeSizeButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void extraLargeSizeButton_Click(object sender, EventArgs e)
+        protected void sizeDropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

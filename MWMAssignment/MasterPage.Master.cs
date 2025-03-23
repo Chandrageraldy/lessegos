@@ -31,5 +31,10 @@ namespace MWMAssignment
         {
             Response.Redirect("../AuthPage/LoginPage.aspx");
         }
+
+        protected void shoppingCartButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../ShoppingCartPage/ShoppingCartPage.aspx");
+        }
     }
 }

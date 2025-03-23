@@ -1,0 +1,69 @@
+﻿.manage-users-page {
+    font-family: karla;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: #F7F7F7;
+}
+    /*HEADER*/
+    .manage-users-page .header-container {
+        width: 85%;
+        margin: auto;
+    }
+
+    .manage-users-page h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        letter-spacing: 0.1rem;
+    }
+
+    /*MANAGE USERS CONTAINER*/
+    .manage-users-page .manage-users-container {
+        width: 85%;
+        background-color: white;
+        margin: auto;
+        min-height: 65vh;
+    }
+
+    /*TABLE*/
+    .manage-users-page .action-column {
+        text-align: right;
+    }
+
+    .manage-users-page .fa-solid {
+        margin-right: 1rem;
+    }
+
+    .manage-users-page .edit-user-button {
+        color: black;
+    }
+
+    .manage-users-page .delete-user-button {
+        color: red;
+    }
+
+    .manage-users-page .disable-user-button {
+        color: red;
+    }
+
+    .manage-users-page .enable-user-button {
+        color: green;
+    }
+
+    .manage-users-page th {
+        background-color: #f6f6f6;
+    }
+
+@media (max-width: 840px) {
+    .manage-users-page .header-container {
+        width: 95%;
+    }
+
+    .manage-users-page h2 {
+        font-size: 1.2rem;
+    }
+
+    .manage-users-page .manage-users-container {
+        width: 95%;
+    }
+}

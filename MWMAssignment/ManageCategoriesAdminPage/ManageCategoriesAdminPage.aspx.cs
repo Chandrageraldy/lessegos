@@ -14,6 +14,11 @@ namespace MWMAssignment
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["email"] == null)
+            {
+                Response.Redirect("../AuthAdminPage/LoginAdminPage.aspx");
+            }
+
             if (!IsPostBack)
             {
                 LoadCategories();
@@ -22,23 +27,20 @@ namespace MWMAssignment
 
         private void LoadCategories()
         {
-            string connString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            con.Open();
 
-            using (SqlConnection con = new SqlConnection(connString))
-            {
-                string query = "SELECT categoryId, categoryName, categoryImageUrl FROM categoryTable";
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
-                    {
-                        DataTable dt = new DataTable();
-                        sda.Fill(dt);
+            string query = "SELECT categoryId, categoryName, categoryImageUrl FROM categoryTable";
+            SqlCommand command = new SqlCommand(query, con);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
 
-                        categoryGrid.DataSource = dt;
-                        categoryGrid.DataBind();
-                    }
-                }
-            }
+            DataTable dataTable = new DataTable();
+            dataAdapter.Fill(dataTable);
+
+            categoryGrid.DataSource = dataTable;
+            categoryGrid.DataBind();
+
+            con.Close();
         }
 
         protected void createCategoryButton_Click(object sender, EventArgs e)

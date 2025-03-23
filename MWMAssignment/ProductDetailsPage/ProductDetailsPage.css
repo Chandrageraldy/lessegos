@@ -34,8 +34,24 @@
         font-weight: 600;
     }
 
-    .product-details-page .size-button-row {
+    .product-details-page .size-dropdown-container {
+        display: flex;
         margin-bottom: 1rem;
+    }
+
+    .product-details-page .size-dropdown-button {
+        width: 3.5rem;
+        text-indent: 0.5rem;
+        height: 2rem;
+        align-items: center;
+        border: none;
+    }
+
+    .product-details-page .select-size-label {
+        margin: 0;
+        margin-right: 0.7rem;
+        font-weight: 600;
+        align-self: center;
     }
 
     .product-details-page .quantity-container {
@@ -54,8 +70,20 @@
         text-indent: 0.5rem;
     }
 
-    .product-details-page .product-quantity-text-field:focus {
-        outline: none;
+    .product-details-page .add-to-cart-button {
+        padding: 0.7rem;
+        width: 100%;
+        background-color: black;
+        color: white;
+        font-weight: 300;
+        border: none;
+        margin-top: 2rem;
+    }
+
+    .product-details-page .product-size-button {
+        border: solid 0.05rem black;
+        border-radius: 0;
+        min-width: 2.5rem;
     }
 
     /*MEDIA QUERY WITH MAX WIDTH OF 840PX*/

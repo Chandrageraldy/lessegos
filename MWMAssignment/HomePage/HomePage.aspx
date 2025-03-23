@@ -12,7 +12,7 @@
                         <p class="caption">LESSEGOS CLOTHING</p>
                         <h1 class="title">WELCOME TO LESSEGOS</h1>
                         <p class="description">An Indonesian streetwear storytelling brand that pays homage to the culture, nostalgia, and everyday experiences of growing up in Indonesia.</p>
-                        <button class="shop-now-button">SHOP NOW</button>
+                        <asp:Button runat="server" Text="SHOP NOW" ID="shopNowButton1" class="shop-now-button" OnClick="shopNowButton1_Click"/>
                     </div>
                 </div>
                 <div class="col-xl-7 column">
@@ -27,7 +27,7 @@
                     <p class="caption">NEW COLLECTION</p>
                     <h1 class="title">PLEASURE CLUB</h1>
                     <p class="description">A tribute to indulgence, freedom, and self-expression. Inspired by Indonesia’s vibrant underground culture, this collection embodies the thrill of living unapologetically. Welcome to the club.</p>
-                    <button class="shop-now-button">SHOP NOW</button>
+                    <asp:Button runat="server" Text="SHOP NOW" class="shop-now-button" ID="shopNowButton2" OnClick="shopNowButton2_Click" />
                 </div>
             </div>
         </section>

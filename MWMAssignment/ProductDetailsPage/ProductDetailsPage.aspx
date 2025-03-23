@@ -36,11 +36,14 @@
                 <div class="col-xl-6 product-details-column">
                     <h3>WHITE OVERSIZE FLEUR PEACE</h3>
                     <p class="product-price">Rp 200.000</p>
-                    <div class="size-button-row">
-                        <asp:Button runat="server" type="button" class="btn product-size-button" Text="S" ID="smallSizeButton" OnClick="smallSizeButton_Click" />
-                        <asp:Button runat="server" type="button" class="btn product-size-button" Text="M" ID="mediumSizeButton" OnClick="mediumSizeButton_Click" />
-                        <asp:Button runat="server" type="button" class="btn product-size-button" Text="L" ID="largeSizeButton" OnClick="largeSizeButton_Click" />
-                        <asp:Button runat="server" type="button" class="btn product-size-button" Text="XL" ID="extraLargeSizeButton" OnClick="extraLargeSizeButton_Click" />
+                    <div class="size-dropdown-container">
+                        <p class="select-size-label">SELECT SIZE:</p>
+                        <asp:DropDownList runat="server" ID="sizeDropdown" AutoPostBack="true" class="size-dropdown-button" OnSelectedIndexChanged="sizeDropdown_SelectedIndexChanged">
+                            <asp:ListItem Text="S" Value="S"></asp:ListItem>
+                            <asp:ListItem Text="M" Value="M"></asp:ListItem>
+                            <asp:ListItem Text="L" Value="L"></asp:ListItem>
+                            <asp:ListItem Text="XL" Value="XL"></asp:ListItem>
+                        </asp:DropDownList>
                     </div>
                     <p>
                         • 100% cotton short sleeve tee<br>
@@ -53,7 +56,7 @@
                         <p class="quantity-label">QUANTITY:</p>
                         <asp:TextBox runat="server" ID="productQuantity" class="product-quantity-text-field" TextMode="Number" Text="1"></asp:TextBox>
                     </div>
-
+                    <asp:Button runat="server" class="add-to-cart-button" Text="ADD TO CART" OnClick="addToCartButton_Click" ID="addToCartButton" />
                 </div>
             </div>
         </section>

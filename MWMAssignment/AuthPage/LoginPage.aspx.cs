@@ -18,44 +18,51 @@ namespace MWMAssignment
 
         protected void loginButton_Click(object sender, EventArgs e)
         {
-            try
+            string userName = "";
+            bool isEnabled = false;
+
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            con.Open();
+
+            string checkUserQuery = "SELECT userId, userName, isEnabled FROM userTable WHERE email = @email AND password = @password";
+            SqlCommand checkUserCommand = new SqlCommand(checkUserQuery, con);
+            checkUserCommand.Parameters.AddWithValue("@email", email.Text);
+            checkUserCommand.Parameters.AddWithValue("@password", password.Text);
+
+            SqlDataReader reader = checkUserCommand.ExecuteReader();
+
+            if (reader.Read())
             {
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-                con.Open();
+                userName = reader["userName"].ToString().Trim();
+                isEnabled = Convert.ToBoolean(reader["isEnabled"]);
+            }
 
-                string checkUserQuery = "SELECT COUNT(*) FROM userTable WHERE email = @email AND password = @password";
-                SqlCommand checkUserCommand = new SqlCommand(checkUserQuery, con);
-                checkUserCommand.Parameters.AddWithValue("@email", email.Text);
-                checkUserCommand.Parameters.AddWithValue("@password", password.Text);
-                int checkUser = Convert.ToInt32(checkUserCommand.ExecuteScalar().ToString());
+            reader.Close();
 
-                if (checkUser > 0)
+            if (userName != null)
+            {
+                if (isEnabled)
                 {
-                    string getUsernameQuery = "SELECT userName FROM userTable where email = @email";
-                    SqlCommand getUsernameCommand = new SqlCommand(getUsernameQuery, con);
-                    getUsernameCommand.Parameters.AddWithValue("@email", email.Text);
-                    SqlDataReader getUsernameDataReader = getUsernameCommand.ExecuteReader();
-
-                    while (getUsernameDataReader.Read())
-                    {
-                        Session["userName"] = getUsernameDataReader["userName"].ToString().Trim();
-                    }
-
+                    Session["userName"] = userName;
                     Response.Redirect("../HomePage/HomePage.aspx");
                 }
                 else
                 {
                     authErrorMessageContainer.Visible = true;
-                    authErrorMessage.Text = "Email does not exist or password is incorrect.";
+                    authErrorMessage.Text = "Your account is temporarily disabled. Please contact the admin for more info.";
                     email.Text = "";
                     password.Text = "";
                 }
-                con.Close();
             }
-            catch (Exception exception)
+            else
             {
-
+                authErrorMessageContainer.Visible = true;
+                authErrorMessage.Text = "Email does not exist or password is incorrect.";
+                email.Text = "";
+                password.Text = "";
             }
+
+            con.Close();
         }
     }
 }

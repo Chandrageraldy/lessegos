@@ -19,7 +19,7 @@
                 </div>
                 <div class="auth-text-field-container">
                     <p>PASSWORD:</p>
-                    <asp:TextBox runat="server" ID="password" placeholder="Password" class="auth-text-field" />
+                    <asp:TextBox runat="server" ID="password" placeholder="Password" class="auth-text-field" TextMode="Password"/>
                     <asp:RegularExpressionValidator runat="server" ControlToValidate="password" ErrorMessage="Password must be at least 8 characters long" CssClass="validation-message" ValidationExpression="^.{8,}$" Display="Dynamic"></asp:RegularExpressionValidator>
                     <asp:RequiredFieldValidator runat="server" ControlToValidate="password" ErrorMessage="Password is required" CssClass="validation-message" Display="Dynamic"></asp:RequiredFieldValidator>
                 </div>

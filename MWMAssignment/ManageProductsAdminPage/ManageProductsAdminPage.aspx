@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterAdminPage.Master" AutoEventWireup="true" CodeBehind="ManageProductsAdminPage.aspx.cs" Inherits="MWMAssignment.WebForm6" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterAdminPage.Master" AutoEventWireup="true" CodeBehind="ManageProductsAdminPage.aspx.cs" Inherits="MWMAssignment.WebForm6" UnobtrusiveValidationMode="None" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../ManageProductsAdminPage/ManageProductsAdminPage.css" rel="stylesheet" />
@@ -27,51 +27,75 @@
                     <div class="modal-body">
                         <h3>CREATE NEW PRODUCT</h3>
                         <div class="title-desc-category-text-field-container">
-                            <p class="text-field-title">PRODUCT TITLE:</p>
+                            <div class="title-row">
+                                <p class="text-field-title">PRODUCT TITLE:</p>
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="productTitle" ErrorMessage="* required" CssClass="validation-message" Display="Dynamic"></asp:RequiredFieldValidator>
+                            </div>
                             <asp:TextBox runat="server" ID="productTitle" placeholder="" class="text-field" />
                         </div>
                         <div class="title-desc-category-text-field-container">
-                            <p class="text-field-title">PRODUCT DESCRIPTION:</p>
-                            <asp:TextBox runat="server" ID="productDesc" placeholder="" class="text-field" />
+                            <div class="title-row">
+                                <p class="text-field-title">PRODUCT DESCRIPTION:</p>
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="productDesc" ErrorMessage="* required" CssClass="validation-message" Display="Dynamic"></asp:RequiredFieldValidator>
+                            </div>
+                            <asp:TextBox runat="server" ID="productDesc" placeholder="" class="text-field-multiline" TextMode="MultiLine" />
                         </div>
                         <div class="row">
                             <div class="image-upload-container col-xl-6">
-                                <p class="text-field-title">FRONT:</p>
-                                <asp:FileUpload runat="server" class="form-control" ID="FrontUploadedImage"/>
+                                <div class="title-row">
+                                    <p class="text-field-title">FRONT:</p>
+                                    <p class="image-validation-message">* required</p>
+                                </div>
+                                <asp:FileUpload runat="server" class="form-control" ID="productFrontImage" />
                             </div>
                             <div class="image-upload-container col-xl-6">
-                                <p class="text-field-title">BACK:</p>
-                                <asp:FileUpload runat="server" class="form-control" ID="BackUploadedImage"/>
+                                <div class="title-row">
+                                    <p class="text-field-title">BACK:</p>
+                                    <p class="image-validation-message">* required</p>
+                                </div>
+                                <asp:FileUpload runat="server" class="form-control" ID="productBackImage" />
                             </div>
                             <div class="image-upload-container col-xl-6">
-                                <p class="text-field-title">ALT1:</p>
-                                <asp:FileUpload runat="server" class="form-control" ID="Alt1UploadedImage"/>
+                                <div class="title-row">
+                                    <p class="text-field-title">ALT1:</p>
+                                </div>
+                                <asp:FileUpload runat="server" class="form-control" ID="productAlt1Image" />
                             </div>
                             <div class="image-upload-container col-xl-6">
-                                <p class="text-field-title">ALT2:</p>
-                                <asp:FileUpload runat="server" class="form-control" ID="Alt2UploadedImager"/>
+                                <div class="title-row">
+                                    <p class="text-field-title">ALT2:</p>
+                                </div>
+                                <asp:FileUpload runat="server" class="form-control" ID="productAlt2Image" />
                             </div>
                         </div>
                         <div class="quantity-text-field-container">
-                            <p class="text-field-title">QUANTITY</p>
+                            <div class="title-row">
+                                <p class="text-field-title">QUANTITY</p>
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="productSSizeQuantity" ErrorMessage="* S required" CssClass="validation-message" Display="Dynamic"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="productMSizeQuantity" ErrorMessage="* M required" CssClass="validation-message" Display="Dynamic"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="productLSizeQuantity" ErrorMessage="* L required" CssClass="validation-message" Display="Dynamic"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="productXLSizeQuantity" ErrorMessage="* XL required" CssClass="validation-message" Display="Dynamic"></asp:RequiredFieldValidator>
+                            </div>
                             <div class="quantity-text-field-row row">
                                 <div class="col-xl-6">
-                                    <asp:TextBox runat="server" ID="Ssize" placeholder="S" class="text-field" />
+                                    <asp:TextBox runat="server" ID="productSSizeQuantity" placeholder="S" class="text-field" TextMode="Number" />
                                 </div>
                                 <div class="col-xl-6">
-                                    <asp:TextBox runat="server" ID="MSize" placeholder="M" class="text-field" />
+                                    <asp:TextBox runat="server" ID="productMSizeQuantity" placeholder="M" class="text-field" TextMode="Number" />
                                 </div>
                                 <div class="col-xl-6">
-                                    <asp:TextBox runat="server" ID="LSize" placeholder="L" class="text-field" />
+                                    <asp:TextBox runat="server" ID="productLSizeQuantity" placeholder="L" class="text-field" TextMode="Number" />
                                 </div>
                                 <div class="col-xl-6">
-                                    <asp:TextBox runat="server" ID="XLSize" placeholder="XL" class="text-field" />
+                                    <asp:TextBox runat="server" ID="productXLSizeQuantity" placeholder="XL" class="text-field" TextMode="Number" />
                                 </div>
                             </div>
                         </div>
                         <div class="title-desc-category-text-field-container">
-                            <p class="text-field-title">CATEGORY:</p>
-                            <asp:DropDownList runat="server" class="category-dropdown"></asp:DropDownList>
+                            <div class="title-row">
+                                <p class="text-field-title">CATEGORY:</p>
+                            </div>
+                            <asp:DropDownList runat="server" class="category-dropdown" ID="categoryDropdown"></asp:DropDownList>
                         </div>
                         <asp:Button runat="server" class="create-product-button" Text="Create Product" />
                     </div>
@@ -189,5 +213,4 @@
         </section>
         <!-- MANAGE PRODUCTS CONTAINER -->
     </div>
-    ipt>ipt>
 </asp:Content>
