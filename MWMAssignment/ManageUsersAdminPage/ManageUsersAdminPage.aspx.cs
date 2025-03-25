@@ -51,11 +51,6 @@ namespace MWMAssignment
 
         }
 
-        protected void deleteUserButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
         protected void toggleStatusButton_Click(object sender, EventArgs e)
         {
             LinkButton btn = (LinkButton)sender;
@@ -80,6 +75,22 @@ namespace MWMAssignment
 
             con.Close();
 
+            Response.Redirect("../ManageUsersAdminPage/ManageUsersAdminPage.aspx");
+        }
+
+        protected void confirmDeleteButton_Click(object sender, EventArgs e)
+        {
+            string userId = hiddenUserId.Value;
+
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            con.Open();
+
+            string query = "DELETE FROM userTable WHERE userId = @userId";
+            SqlCommand command = new SqlCommand(query, con);
+            command.Parameters.AddWithValue("@userId", userId);
+            command.ExecuteNonQuery();
+
+            con.Close();
             Response.Redirect("../ManageUsersAdminPage/ManageUsersAdminPage.aspx");
         }
     }

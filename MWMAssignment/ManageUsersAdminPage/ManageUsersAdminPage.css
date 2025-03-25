@@ -54,6 +54,22 @@
         background-color: #f6f6f6;
     }
 
+    /*DELETE CONFIRMATION MODAL*/
+    .manage-users-page .delete-message {
+        text-align: center;
+    }
+
+    .manage-users-page .delete-modal-action-row {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .manage-users-page h4 {
+        text-align: center;
+        font-weight: 600;
+    }
+
 @media (max-width: 840px) {
     .manage-users-page .header-container {
         width: 95%;

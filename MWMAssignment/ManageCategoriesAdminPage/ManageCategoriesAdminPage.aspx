@@ -2,6 +2,13 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../ManageCategoriesAdminPage/ManageCategoriesAdminPage.css" rel="stylesheet" />
+    <script>
+        function setDeleteCategoryId(categoryId) {
+            document.getElementById('<%= hiddenCategoryId.ClientID %>').value = categoryId;
+            var deleteModal = new bootstrap.Modal(document.getElementById("confirmDeleteModal"));
+            deleteModal.show();
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="manage-categories-page">
@@ -47,13 +54,13 @@
                 <asp:GridView ID="categoryGrid" runat="server" class="table"
                     AutoGenerateColumns="False" EmptyDataText="No records found.">
                     <Columns>
-                        <asp:BoundField DataField="categoryId" HeaderText="ID"/>
+                        <asp:BoundField DataField="categoryId" HeaderText="ID" />
                         <asp:BoundField DataField="categoryName" HeaderText="Category Name" />
                         <asp:TemplateField HeaderText="">
                             <ItemStyle CssClass="action-column" />
                             <ItemTemplate>
                                 <asp:LinkButton runat="server" ID="editCategoryButton" CommandArgument='<%# Eval("categoryId") %>' OnClick="editCategoryButton_Click"><i class="fa-solid fa-pen-to-square edit-category-button"></i></asp:LinkButton>
-                                <asp:LinkButton runat="server" ID="deleteCategoryButton" CommandArgument='<%# Eval("categoryId") %>' OnClick="deleteCategoryButton_Click"><i class="fa-solid fa-trash delete-category-button"></i></asp:LinkButton>
+                                <asp:LinkButton runat="server" ID="deleteCategoryButton" CommandArgument='<%# Eval("categoryId") %>' OnClientClick='<%# "setDeleteCategoryId(" + Eval("categoryId") + "); return false;" %>'><i class="fa-solid fa-trash delete-category-button"></i></asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
@@ -61,5 +68,25 @@
             </div>
         </section>
         <!-- MANAGE CATEGORIES CONTAINER -->
+
+        <!-- DELETE CONFIRMATION MODAL -->
+        <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h4>Confirm Delete</h4>
+                        <p class="delete-message">Are you sure you want to permanently delete this category?</p>
+                        <div class="delete-modal-action-row">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <asp:Button runat="server" ID="confirmDeleteButton" CssClass="btn btn-danger" Text="Delete"
+                                OnClick="confirmDeleteButton_Click" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- HIDDEN FIELD TO STORE CATEGORY ID -->
+        <asp:HiddenField runat="server" ID="hiddenCategoryId" />
     </div>
 </asp:Content>

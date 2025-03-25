@@ -15,102 +15,39 @@ namespace MWMAssignment
     {
 
         /// <summary>
-        /// productTitle control.
+        /// createNewButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox productTitle;
+        protected global::System.Web.UI.WebControls.Button createNewButton;
 
         /// <summary>
-        /// productDesc control.
+        /// rptProducts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox productDesc;
+        protected global::System.Web.UI.WebControls.Repeater rptProducts;
 
         /// <summary>
-        /// productFrontImage control.
+        /// confirmDeleteButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload productFrontImage;
+        protected global::System.Web.UI.WebControls.Button confirmDeleteButton;
 
         /// <summary>
-        /// productBackImage control.
+        /// hiddenProductId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload productBackImage;
-
-        /// <summary>
-        /// productAlt1Image control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload productAlt1Image;
-
-        /// <summary>
-        /// productAlt2Image control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload productAlt2Image;
-
-        /// <summary>
-        /// productSSizeQuantity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox productSSizeQuantity;
-
-        /// <summary>
-        /// productMSizeQuantity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox productMSizeQuantity;
-
-        /// <summary>
-        /// productLSizeQuantity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox productLSizeQuantity;
-
-        /// <summary>
-        /// productXLSizeQuantity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox productXLSizeQuantity;
-
-        /// <summary>
-        /// categoryDropdown control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList categoryDropdown;
+        protected global::System.Web.UI.WebControls.HiddenField hiddenProductId;
     }
 }

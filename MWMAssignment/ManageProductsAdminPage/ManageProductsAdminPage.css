@@ -54,11 +54,11 @@
 
     .manage-products-page .product-price {
         white-space: nowrap;
-        overflow: hidden;
         text-overflow: ellipsis;
     }
 
     .manage-products-page .edit-action-button {
+        margin-top: 1rem;
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
         width: 100%;
@@ -71,6 +71,7 @@
     }
 
     .manage-products-page .delete-action-button {
+        margin-top: 1rem;
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
         width: 100%;
@@ -153,6 +154,22 @@
         font-size: 1rem;
         font-weight: 400;
         margin: 0;
+    }
+
+    /*DELETE CONFIRMATION MODAL*/
+    .manage-products-page .delete-message {
+        text-align: center;
+    }
+
+    .manage-products-page .delete-modal-action-row {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .manage-products-page h4 {
+        text-align: center;
+        font-weight: 600;
     }
 
 @media (max-width: 840px) {

@@ -59,29 +59,28 @@ namespace MWMAssignment
             Response.Redirect("../ManageCategoriesAdminPage/ManageCategoriesAdminPage.aspx");
         }
 
-        protected void deleteCategoryButton_Click(object sender, EventArgs e)
-        {
-            LinkButton btn = (LinkButton)sender;
-            string categoryId = btn.CommandArgument;
-
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-            con.Open();
-
-            string query = "DELETE FROM categoryTable WHERE categoryId = @categoryId";
-            SqlCommand commandSection = new SqlCommand(query, con);
-            commandSection.Parameters.AddWithValue("@categoryId", categoryId);
-            commandSection.ExecuteNonQuery();
-
-            con.Close();
-            Response.Redirect("../ManageCategoriesAdminPage/ManageCategoriesAdminPage.aspx");
-        }
-
         protected void editCategoryButton_Click(object sender, EventArgs e)
         {
             LinkButton btn = (LinkButton)sender;
             int categoryId = Convert.ToInt32(btn.CommandArgument);
 
             
+        }
+
+        protected void confirmDeleteButton_Click(object sender, EventArgs e)
+        {
+            string categoryId = hiddenCategoryId.Value;
+
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            con.Open();
+
+            string query = "DELETE FROM categoryTable WHERE categoryId = @categoryId";
+            SqlCommand command= new SqlCommand(query, con);
+            command.Parameters.AddWithValue("@categoryId", categoryId);
+            command.ExecuteNonQuery();
+
+            con.Close();
+            Response.Redirect("../ManageCategoriesAdminPage/ManageCategoriesAdminPage.aspx");
         }
     }
 }

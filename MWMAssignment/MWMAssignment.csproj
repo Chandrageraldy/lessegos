@@ -100,6 +100,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="CreateProductAdminPage\CreateProductAdminPage.css" />
     <Content Include="ManageCategoriesAdminPage\ManageCategoriesAdminPage.css" />
     <Content Include="ManageProductsAdminPage\ManageProductsAdminPage.css" />
     <Content Include="HomePage\HomePage.css" />
@@ -113,6 +114,7 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ShopPage\ShopPage.css" />
     <Content Include="SQLConnectionString.aspx" />
     <Content Include="Web.config" />
     <Content Include="AuthPage\RegistrationPage.aspx" />
@@ -127,6 +129,7 @@
     <Content Include="ShopPage\ShopPage.aspx" />
     <Content Include="ShoppingCartPage\ShoppingCartPage.aspx" />
     <Content Include="ManageUsersAdminPage\ManageUsersAdminPage.aspx" />
+    <Content Include="CreateProductAdminPage\CreateProductAdminPage.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MasterAdminPage.Master.cs">
@@ -234,6 +237,13 @@
     </Compile>
     <Compile Include="ManageUsersAdminPage\ManageUsersAdminPage.aspx.designer.cs">
       <DependentUpon>ManageUsersAdminPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateProductAdminPage\CreateProductAdminPage.aspx.cs">
+      <DependentUpon>CreateProductAdminPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateProductAdminPage\CreateProductAdminPage.aspx.designer.cs">
+      <DependentUpon>CreateProductAdminPage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

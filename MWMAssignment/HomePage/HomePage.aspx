@@ -31,9 +31,9 @@
                 </div>
             </div>
         </section>
-        <section class="best-seller-section">
-            <h2 class="best-seller-title">BEST SELLERS  </h2>
-            <div class="best-seller-container row">
+        <section class="new-release-section">
+            <h2 class="new-release-title">NEW RELEASE  </h2>
+            <div class="new-release-container row">
                 <div class="col-xl-3 col-md-3 col-6 best-seller-col">
                     <img src="../Assets/shirt1.png" alt="Shirt 1" class="item" />
                     <p class="item-name">White Oversize Fleur Peace</p>
