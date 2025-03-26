@@ -59,7 +59,7 @@
                                 <asp:LinkButton runat="server" ID="editProductButton" CommandArgument='<%# Eval("productId") %>' OnClick="editProductButton_Click"><i class="fa-solid fa-pen-to-square edit-product-button"></i></asp:LinkButton>
                                 <asp:LinkButton runat="server" ID="deleteProductButton" CommandArgument='<%# Eval("productId") %>' OnClientClick='<%# "setDeleteProductId(" + Eval("productId") + "); return false;" %>'><i class="fa-solid fa-trash delete-product-button"></i></asp:LinkButton>
                                 <asp:LinkButton runat="server" ID="toggleStatusButton" CommandArgument='<%# Eval("productId") %>' OnClick="toggleStatusButton_Click">
-                    <i class='<%# Convert.ToBoolean(Eval("isEnabled")) ? "fa-solid fa-user-slash disable-product-button" : "fa-solid fa-user-check enable-product-button" %>'></i>
+                    <i class='<%# Convert.ToBoolean(Eval("isEnabled")) ? "fa-solid fas fa-ban disable-product-button" : "fa-solid fas fa-unlock enable-product-button" %>'></i>
                                 </asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>

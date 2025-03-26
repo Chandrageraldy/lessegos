@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
+using System.IO;
 
 namespace MWMAssignment
 {
@@ -45,12 +46,32 @@ namespace MWMAssignment
 
         protected void createCategoryButton_Click(object sender, EventArgs e)
         {
+            string categoryImageUrl = string.Empty;
+
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             con.Open();
 
-            string query = "INSERT INTO categoryTable(categoryName) VALUES (@categoryName)";
+            if (categoryUploadedImage.HasFile)
+            {
+
+                string folderPath = Server.MapPath("~/UploadedImage/Category/");
+
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+
+                categoryImageUrl = "~/UploadedImage/Category/" + this.categoryUploadedImage.FileName.ToString();
+                categoryUploadedImage.SaveAs(folderPath + Path.GetFileName(categoryUploadedImage.FileName));
+            } else
+            {
+                categoryImageUrl = "~/UploadedImage/Category/" + "Category Placeholder.png";
+            }
+
+            string query = "INSERT INTO categoryTable(categoryName, categoryImageUrl) VALUES (@categoryName, @categoryImageUrl)";
             SqlCommand command = new SqlCommand(query, con);
             command.Parameters.AddWithValue("@categoryName", categoryName.Text);
+            command.Parameters.AddWithValue("@categoryImageUrl", categoryImageUrl);
             command.ExecuteNonQuery();
 
             categoryName.Text = "";
@@ -64,7 +85,7 @@ namespace MWMAssignment
             LinkButton btn = (LinkButton)sender;
             int categoryId = Convert.ToInt32(btn.CommandArgument);
 
-            
+
         }
 
         protected void confirmDeleteButton_Click(object sender, EventArgs e)
@@ -75,7 +96,7 @@ namespace MWMAssignment
             con.Open();
 
             string query = "DELETE FROM categoryTable WHERE categoryId = @categoryId";
-            SqlCommand command= new SqlCommand(query, con);
+            SqlCommand command = new SqlCommand(query, con);
             command.Parameters.AddWithValue("@categoryId", categoryId);
             command.ExecuteNonQuery();
 
