@@ -25,7 +25,7 @@ namespace MWMAssignment
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             con.Open();
 
-            string query = "SELECT * FROM productTable";
+            string query = "SELECT * FROM productTable WHERE isEnabled = 1 ";
             SqlDataAdapter dataAdapter = new SqlDataAdapter(query, con);
             DataTable dataTable = new DataTable();
 
@@ -39,7 +39,9 @@ namespace MWMAssignment
 
         protected void item_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../ProductDetailsPage/ProductDetailsPage.aspx");
+            LinkButton btn = (LinkButton)sender;
+            string productId = btn.CommandArgument;
+            Response.Redirect("../ProductDetailsPage/ProductDetailsPage.aspx?productId=" + productId);
         }
     }
 }

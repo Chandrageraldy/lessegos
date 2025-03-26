@@ -27,19 +27,23 @@ namespace MWMAssignment
 
         protected void LoadProducts()
         {
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-            con.Open();
+            string connString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
-            string query = "SELECT * FROM productTable";
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(query, con);
-            DataTable dataTable = new DataTable();
+            using (SqlConnection con = new SqlConnection(connString))
+            {
+                string query = @"SELECT productId, productName, productPrice, productFrontImage, (ISNULL(productSSizeQuantity, 0) + ISNULL(productMSizeQuantity, 0) + ISNULL(productLSizeQuantity, 0) + ISNULL(productXLSizeQuantity, 0)) AS totalQuantity, isEnabled FROM productTable";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        sda.Fill(dt);
 
-            dataAdapter.Fill(dataTable);
-
-            rptProducts.DataSource = dataTable;
-            rptProducts.DataBind();
-
-            con.Close();
+                        productGrid.DataSource = dt;
+                        productGrid.DataBind();
+                    }
+                }
+            }
         }
 
         protected void createNewButton_Click(object sender, EventArgs e)
@@ -65,6 +69,39 @@ namespace MWMAssignment
             command.ExecuteNonQuery();
 
             con.Close();
+            Response.Redirect("../ManageProductsAdminPage/ManageProductsAdminPage.aspx");
+        }
+
+        protected void editProductButton_Click(object sender, EventArgs e)
+        {
+            LinkButton btn = (LinkButton)sender;
+            string productId = btn.CommandArgument;
+        }
+
+        protected void toggleStatusButton_Click(object sender, EventArgs e)
+        {
+            LinkButton btn = (LinkButton)sender;
+            int productId = Convert.ToInt32(btn.CommandArgument);
+
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            con.Open();
+
+            string getIsEnabledQuery = "SELECT isEnabled FROM productTable WHERE productId = @productId";
+            SqlCommand getIsEnabledCommand = new SqlCommand(getIsEnabledQuery, con);
+            getIsEnabledCommand.Parameters.AddWithValue("@productId", productId);
+            bool isEnabled = Convert.ToBoolean(getIsEnabledCommand.ExecuteScalar());
+
+            // Toggle status
+            bool newStatus = !isEnabled;
+
+            string updateIsEnabledQuery = "UPDATE productTable SET isEnabled = @newStatus WHERE productId = @productId";
+            SqlCommand updateIsEnabledCommand = new SqlCommand(updateIsEnabledQuery, con);
+            updateIsEnabledCommand.Parameters.AddWithValue("@productId", productId);
+            updateIsEnabledCommand.Parameters.AddWithValue("@newStatus", newStatus);
+            updateIsEnabledCommand.ExecuteNonQuery();
+
+            con.Close();
+
             Response.Redirect("../ManageProductsAdminPage/ManageProductsAdminPage.aspx");
         }
     }

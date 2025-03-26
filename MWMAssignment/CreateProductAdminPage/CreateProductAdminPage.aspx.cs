@@ -105,6 +105,8 @@ namespace MWMAssignment
                 command.Parameters.AddWithValue("@productXLSizeQuantity", int.Parse(productXLSizeQuantity.Text));
                 command.ExecuteNonQuery();
 
+                con.Close();
+
                 Response.Redirect("../ManageProductsAdminPage/ManageProductsAdminPage.aspx");
             }
         }

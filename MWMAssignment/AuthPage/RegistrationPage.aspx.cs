@@ -56,10 +56,8 @@ namespace MWMAssignment
                     insertUserCommand.Parameters.AddWithValue("@password", password.Text);
                     insertUserCommand.ExecuteNonQuery();
 
-                    Session["userName"] = userName.Text;
-
                     con.Close();
-                    Response.Redirect("../HomePage/HomePage.aspx");
+                    Response.Redirect("../AuthPage/LoginPage.aspx");
                 }
             }
             catch (Exception exception)

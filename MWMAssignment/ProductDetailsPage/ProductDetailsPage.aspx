@@ -13,29 +13,29 @@
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                             <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                            <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            <asp:Button runat="server" ID="alt1Button" type="button" data-bs-target="#productCarousel" data-bs-slide-to="2" aria-label="Slide 3"></asp:Button>
+                            <asp:Button runat="server" ID="alt2Button" type="button" data-bs-target="#productCarousel" data-bs-slide-to="3" aria-label="Slide 4"></asp:Button>
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="../Assets/shirt1.png" class="d-block w-100" alt="...">
+                                <asp:Image runat="server" ID="productFrontImage" class="d-block w-100" />
                             </div>
                             <div class="carousel-item">
-                                <img src="../Assets/shirt1back.png" class="d-block w-100" alt="...">
+                                <asp:Image runat="server" ID="productBackImage" class="d-block w-100" />
                             </div>
-                            <div class="carousel-item">
-                                <img src="../Assets/shirt1alt1.png" class="d-block w-100" alt="...">
+                            <div runat="server" class="carousel-item" id="alt1Container">
+                                <asp:Image runat="server" ID="productAlt1Image" class="d-block w-100" />
                             </div>
-                            <div class="carousel-item">
-                                <img src="../Assets/shirt1alt2.png" class="d-block w-100" alt="...">
+                            <div runat="server" class="carousel-item" id="alt2Container">
+                                <asp:Image runat="server" ID="productAlt2Image" class="d-block w-100" />
                             </div>
                         </div>
                     </div>
                     <!--CAROUSEL-->
                 </div>
                 <div class="col-xl-6 product-details-column">
-                    <h3>WHITE OVERSIZE FLEUR PEACE</h3>
-                    <p class="product-price">Rp 200.000</p>
+                    <asp:Label runat="server" Text="WHITE OVERSIZE FLEUR PEACE" ID="productName" CssClass="product-name"></asp:Label>
+                    <asp:Label runat="server" Text="Rp 200.000" class="product-price" ID="productPrice"></asp:Label>
                     <div class="size-dropdown-container">
                         <p class="select-size-label">SELECT SIZE:</p>
                         <asp:DropDownList runat="server" ID="sizeDropdown" AutoPostBack="true" class="size-dropdown-button" OnSelectedIndexChanged="sizeDropdown_SelectedIndexChanged">
@@ -44,17 +44,16 @@
                             <asp:ListItem Text="L" Value="L"></asp:ListItem>
                             <asp:ListItem Text="XL" Value="XL"></asp:ListItem>
                         </asp:DropDownList>
+                        <asp:Label runat="server" class="product-remaining-label" ID="productSSizeQuantity"></asp:Label>
+                        <asp:Label runat="server" class="product-remaining-label" ID="productMSizeQuantity"></asp:Label>
+                        <asp:Label runat="server" class="product-remaining-label" ID="productLSizeQuantity"></asp:Label>
+                        <asp:Label runat="server" class="product-remaining-label" ID="productXLSizeQuantity"></asp:Label>
                     </div>
-                    <p>
-                        • 100% cotton short sleeve tee<br>
-                        • Printed artwork on front and back<br>
-                        • HUF woven label at interior neck<br>
-                        • Soft and breathable fabric for all-day comfort<br>
-                        • Relaxed fit for a casual streetwear look
-                    </p>
+                    <asp:Label runat="server" ID="productDesc"></asp:Label>
                     <div class="quantity-container">
                         <p class="quantity-label">QUANTITY:</p>
-                        <asp:TextBox runat="server" ID="productQuantity" class="product-quantity-text-field" TextMode="Number" Text="1"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="selectedQuantity" class="selected-quantity-text-field" TextMode="Number" Text="1"></asp:TextBox>
+                        <asp:Label runat="server" class="validation-message" ID="validationMessage" Text="Select a valid quantity"></asp:Label>
                     </div>
                     <asp:Button runat="server" class="add-to-cart-button" Text="ADD TO CART" OnClick="addToCartButton_Click" ID="addToCartButton" />
                 </div>

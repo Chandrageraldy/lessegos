@@ -13,11 +13,11 @@ namespace MWMAssignment
         {
             if (!IsPostBack)
             {
-                if (Session["UserName"] != null)
+                if (Session["userName"] != null)
                 {
                     profileButton.Visible = true;
                     signInButton.Visible = false;
-                    profileButton.Text = Session["UserName"].ToString();
+                    profileButton.Text = Session["userName"].ToString();
                 }
                 else
                 {

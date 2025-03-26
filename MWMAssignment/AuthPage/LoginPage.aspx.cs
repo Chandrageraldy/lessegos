@@ -19,6 +19,7 @@ namespace MWMAssignment
         protected void loginButton_Click(object sender, EventArgs e)
         {
             string userName = "";
+            string userId = "";
             bool isEnabled = false;
 
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
@@ -34,16 +35,18 @@ namespace MWMAssignment
             if (reader.Read())
             {
                 userName = reader["userName"].ToString().Trim();
+                userId = reader["userId"].ToString().Trim();
                 isEnabled = Convert.ToBoolean(reader["isEnabled"]);
             }
 
             reader.Close();
 
-            if (userName != null)
+            if (userName != null && userId != null)
             {
                 if (isEnabled)
                 {
                     Session["userName"] = userName;
+                    Session["userId"] = userId;
                     Response.Redirect("../HomePage/HomePage.aspx");
                 }
                 else

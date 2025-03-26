@@ -46,11 +46,6 @@ namespace MWMAssignment
             }
         }
 
-        protected void editUserButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
         protected void toggleStatusButton_Click(object sender, EventArgs e)
         {
             LinkButton btn = (LinkButton)sender;
@@ -92,6 +87,11 @@ namespace MWMAssignment
 
             con.Close();
             Response.Redirect("../ManageUsersAdminPage/ManageUsersAdminPage.aspx");
+        }
+
+        protected void editUserButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

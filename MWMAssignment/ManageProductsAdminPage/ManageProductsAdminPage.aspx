@@ -27,28 +27,44 @@
 
         <!-- MANAGE PRODUCTS CONTAINER -->
         <section>
-            <div class="manage-products-container row g-4">
-                <asp:Repeater ID="rptProducts" runat="server">
-                    <ItemTemplate>
-                        <div class="col-xl-3 col-sm-4 col-6 d-flex justify-content-center align-items-start">
-                            <div class="card" style="width: 16rem;">
-                                <asp:Image runat="server" class="card-img-top" ImageUrl='<%# Eval("productFrontImage") %>' />
-                                <div class="card-body">
-                                    <asp:Label runat="server" class="product-name" Text='<%# Eval("productName") %>'></asp:Label>
-                                    <asp:Label runat="server" class="product-price" Text='<%# "Rp " + Eval("productPrice") %>'></asp:Label>
-                                    <div class="row">
-                                        <div class="col-xl-6">
-                                            <asp:Button runat="server" Text="Edit" class="edit-action-button" CommandArgument='<%# Eval("productId") %>' ID="editUserButton" OnClick="editUserButton_Click"/>
-                                        </div>
-                                        <div class="col-xl-6">
-                                            <asp:Button runat="server" Text="Delete" class="delete-action-button" CommandArgument='<%# Eval("productId") %>' OnClientClick='<%# "setDeleteProductId(" + Eval("productId") + "); return false;" %>' />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </ItemTemplate>
-                </asp:Repeater>
+            <div class="manage-products-container">
+                <asp:GridView ID="productGrid" runat="server" class="table"
+                    AutoGenerateColumns="False" EmptyDataText="No records found.">
+                    <Columns>
+                        <asp:BoundField DataField="productId" HeaderText="ID" />
+
+                        <asp:TemplateField HeaderText="Image">
+                            <ItemTemplate>
+                                <asp:Image runat="server" ImageUrl='<%# Eval("productFrontImage") %>' CssClass="product-image" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+
+                        <asp:BoundField DataField="productName" HeaderText="Product Name" />
+                        <asp:TemplateField HeaderText="Product Price">
+                            <ItemTemplate>
+                                Rp <%# Eval("productPrice", "{0:N0}") %>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:BoundField DataField="totalQuantity" HeaderText="Total Quantity" />
+                        <asp:TemplateField HeaderText="Status">
+                            <ItemTemplate>
+                                <span style='<%# Convert.ToBoolean(Eval("isEnabled")) ? "color: green; font-weight: bold;": "color: red; font-weight: bold;" %>'>
+                                    <%# Convert.ToBoolean(Eval("isEnabled")) ? "Enabled" : "Disabled" %>
+                                </span>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="">
+                            <ItemStyle CssClass="action-column" />
+                            <ItemTemplate>
+                                <asp:LinkButton runat="server" ID="editProductButton" CommandArgument='<%# Eval("productId") %>' OnClick="editProductButton_Click"><i class="fa-solid fa-pen-to-square edit-product-button"></i></asp:LinkButton>
+                                <asp:LinkButton runat="server" ID="deleteProductButton" CommandArgument='<%# Eval("productId") %>' OnClientClick='<%# "setDeleteProductId(" + Eval("productId") + "); return false;" %>'><i class="fa-solid fa-trash delete-product-button"></i></asp:LinkButton>
+                                <asp:LinkButton runat="server" ID="toggleStatusButton" CommandArgument='<%# Eval("productId") %>' OnClick="toggleStatusButton_Click">
+                    <i class='<%# Convert.ToBoolean(Eval("isEnabled")) ? "fa-solid fa-user-slash disable-product-button" : "fa-solid fa-user-check enable-product-button" %>'></i>
+                                </asp:LinkButton>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                </asp:GridView>
             </div>
         </section>
         <!-- MANAGE PRODUCTS CONTAINER -->
@@ -70,7 +86,7 @@
             </div>
         </div>
 
-        <!-- HIDDEN FIELD TO STORE USER ID -->
+        <!-- HIDDEN FIELD TO STORE PRODUCT ID -->
         <asp:HiddenField runat="server" ID="hiddenProductId" />
     </div>
 </asp:Content>

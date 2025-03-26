@@ -31,7 +31,6 @@
         background-color: white;
         margin: auto;
         min-height: 65vh;
-        padding-bottom: 1.5rem;
     }
 
     .manage-products-page .card-img-top {
@@ -40,9 +39,9 @@
         object-fit: cover;
     }
 
-    /*CARD*/
-    .manage-products-page .card-body {
-        text-align: center;
+    .manage-products-page .product-image {
+        width: 7.5rem;
+        height: 7.5rem;
     }
 
     .manage-products-page .product-name {
@@ -171,6 +170,39 @@
         text-align: center;
         font-weight: 600;
     }
+
+    /*TABLE*/
+    .manage-products-page .action-column {
+        text-align: right;
+    }
+
+    .manage-products-page .fa-solid {
+        margin-right: 1rem;
+    }
+
+    .manage-products-page .edit-product-button {
+        color: black;
+    }
+
+    .manage-products-page .delete-product-button {
+        color: red;
+    }
+
+    .manage-products-page .disable-product-button {
+        color: red;
+    }
+
+    .manage-products-page .enable-product-button {
+        color: green;
+    }
+
+    .manage-products-page th {
+        background-color: #f6f6f6;
+    }
+
+.manage-users-page th {
+    background-color: #f6f6f6;
+}
 
 @media (max-width: 840px) {
     .manage-products-page .header-container {

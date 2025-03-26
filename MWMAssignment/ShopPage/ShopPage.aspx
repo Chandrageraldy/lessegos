@@ -12,9 +12,9 @@
                     <ItemTemplate>
                         <div class="col-xl-3 col-md-3 col-6 best-seller-col">
                             <asp:LinkButton runat="server" ID="item" CommandArgument='<%# Eval("productId") %>' OnClick="item_Click">
-                                <asp:Image runat="server" class="card-img-top" ImageUrl='<%# Eval("productFrontImage") %>' CssClass="item-image"/>
+                                <asp:Image runat="server" ImageUrl='<%# Eval("productFrontImage") %>' CssClass="item-image"/>
                                 <asp:Label runat="server" class="item-name" Text='<%# Eval("productName") %>'></asp:Label>
-                                <asp:Label runat="server" class="item-price" Text='<%# "Rp " + Eval("productPrice") %>'></asp:Label>
+                                <asp:Label runat="server" class="item-price" Text='<%# "Rp " + String.Format("{0:N0}", Eval("productPrice")) %>'></asp:Label>
                             </asp:LinkButton>
                         </div>
                     </ItemTemplate>
