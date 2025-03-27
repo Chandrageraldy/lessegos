@@ -1,0 +1,96 @@
+﻿.shopping-cart-page {
+    font-family: karla;
+}
+
+    .shopping-cart-page .shopping-cart-section {
+        margin: 3rem auto;
+        width: 85%;
+        min-height: 60vh;
+    }
+
+    .shopping-cart-page .shopping-cart-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        letter-spacing: 0.1rem;
+    }
+
+    /*TABLE*/
+    .shopping-cart-page .product-image {
+        width: 7.5rem;
+        height: 7.5rem;
+    }
+
+    .shopping-cart-page .table {
+        border: none;
+    }
+
+    .shopping-cart-page th {
+        border-bottom: 2px solid #EFEEEF;
+    }
+
+    .shopping-cart-page .product-name {
+        display: block;
+        font-weight: 600;
+    }
+
+    .shopping-cart-page .selected-size {
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    .shopping-cart-page .product-price {
+        display: block;
+        font-weight: 600;
+    }
+
+    .shopping-cart-page .selected-quantity {
+        display: block;
+        border: none;
+    }
+
+    .shopping-cart-page .remove-button {
+        color: black;
+        font-weight: 700;
+    }
+
+    /*PAYMENT CONTAINER*/
+    .shopping-cart-page .payment-container {
+        background-color: #EFEEEF;
+        padding: 1.25rem;
+    }
+
+    .shopping-cart-page .total-row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .shopping-cart-page .total-label {
+        font-weight: 700;
+        font-size: 1.5rem;
+    }
+
+    .shopping-cart-page .checkout-button {
+        width: 100%;
+        height: 3.5rem;
+        color: white;
+        background-color: black;
+        border: none;
+    }
+
+        .shopping-cart-page .checkout-button:disabled {
+            background-color: #ccc;
+            color: #666;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+@media (max-width: 840px) {
+    .shopping-cart-page .shopping-cart-section {
+        width: 95%;
+    }
+
+    .shopping-cart-page .shopping-cart-title {
+        font-size: 1.5rem;
+    }
+}

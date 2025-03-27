@@ -24,7 +24,7 @@
         <section>
             <div class="manage-users-container">
                 <asp:GridView ID="userGrid" runat="server" class="table"
-                    AutoGenerateColumns="False" EmptyDataText="No records found.">
+                    AutoGenerateColumns="False" EmptyDataText="No user registered.">
                     <Columns>
                         <asp:BoundField DataField="userId" HeaderText="ID" />
                         <asp:BoundField DataField="firstName" HeaderText="First Name" />

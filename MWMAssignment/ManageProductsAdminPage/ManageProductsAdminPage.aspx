@@ -29,7 +29,7 @@
         <section>
             <div class="manage-products-container">
                 <asp:GridView ID="productGrid" runat="server" class="table"
-                    AutoGenerateColumns="False" EmptyDataText="No records found.">
+                    AutoGenerateColumns="False" EmptyDataText="Your product listing is empty.">
                     <Columns>
                         <asp:BoundField DataField="productId" HeaderText="ID" />
 

@@ -119,6 +119,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ShopPage\ShopPage.css" />
+    <Content Include="ShoppingCartPage\ShoppingCartPage.css" />
     <Content Include="SQLConnectionString.aspx" />
     <Content Include="Web.config" />
     <Content Include="AuthPage\RegistrationPage.aspx" />

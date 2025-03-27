@@ -52,7 +52,7 @@
         <section>
             <div class="manage-categories-container">
                 <asp:GridView ID="categoryGrid" runat="server" class="table"
-                    AutoGenerateColumns="False" EmptyDataText="No records found.">
+                    AutoGenerateColumns="False" EmptyDataText="Your category listing is empty.">
                     <Columns>
                         <asp:BoundField DataField="categoryId" HeaderText="ID" />
                         <asp:BoundField DataField="categoryName" HeaderText="Category Name" />

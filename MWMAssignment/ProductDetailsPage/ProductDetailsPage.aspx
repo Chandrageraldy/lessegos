@@ -2,8 +2,16 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../ProductDetailsPage/ProductDetailsPage.css" rel="stylesheet" />
+    <script>
+        function showToast() {
+            const alertToast = document.getElementById('alertToast');
+            const toastBootstrap = bootstrap.Toast.getOrCreateInstance(alertToast);
+            toastBootstrap.show();
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
+    <asp:ScriptManager runat="server" ID="ScriptManager1"></asp:ScriptManager>
     <div class="product-details-page">
         <section>
             <div class="main-container row">
@@ -33,6 +41,20 @@
                     </div>
                     <!--CAROUSEL-->
                 </div>
+
+                <!--TOAST-->
+                <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                    <div id="alertToast" class="toast alert-toast" role="alert">
+                        <div class="d-flex">
+                            <div class="toast-body">
+                                Hello, world! This is a toast message.
+                            </div>
+                            <button type="button" class="btn-close btn-close-black me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>
+                <!--TOAST-->
+
                 <div class="col-xl-6 product-details-column">
                     <asp:Label runat="server" Text="WHITE OVERSIZE FLEUR PEACE" ID="productName" CssClass="product-name"></asp:Label>
                     <asp:Label runat="server" Text="Rp 200.000" class="product-price" ID="productPrice"></asp:Label>
@@ -52,10 +74,13 @@
                     <asp:Label runat="server" ID="productDesc"></asp:Label>
                     <div class="quantity-container">
                         <p class="quantity-label">QUANTITY:</p>
-                        <asp:TextBox runat="server" ID="selectedQuantity" class="selected-quantity-text-field" TextMode="Number" Text="1"></asp:TextBox>
-                        <asp:Label runat="server" class="validation-message" ID="validationMessage" Text="Select a valid quantity"></asp:Label>
+                        <asp:TextBox runat="server" ID="selectedQuantity" class="selected-quantity-text-field" TextMode="Number" Text="1" Min="1" Max=""></asp:TextBox>
                     </div>
-                    <asp:Button runat="server" class="add-to-cart-button" Text="ADD TO CART" OnClick="addToCartButton_Click" ID="addToCartButton" />
+                    <asp:UpdatePanel runat="server">
+                        <ContentTemplate>
+                            <asp:Button runat="server" class="add-to-cart-button" Text="ADD TO CART" OnClick="addToCartButton_Click" ID="addToCartButton" />
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
                 </div>
             </div>
         </section>

@@ -107,6 +107,10 @@
         margin-left: 1rem;
     }
 
+    .product-details-page .alert-toast {
+        background-color: #d1fadf;
+    }
+
     /*MEDIA QUERY WITH MAX WIDTH OF 840PX*/
     @media (max-width: 840px) {
         .product-details-page .main-container {

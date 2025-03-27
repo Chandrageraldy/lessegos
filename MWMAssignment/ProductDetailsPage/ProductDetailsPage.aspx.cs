@@ -20,7 +20,6 @@ namespace MWMAssignment
                     string productId = Request.QueryString["productId"];
                     hideAllSizeQuantity();
                     productSSizeQuantity.Visible = true;
-                    validationMessage.Visible = false;
                     LoadProductDetails(productId);
                 }
                 else
@@ -79,6 +78,7 @@ namespace MWMAssignment
                 productMSizeQuantity.Text = reader["productMSizeQuantity"].ToString() + " Remaining";
                 productLSizeQuantity.Text = reader["productLSizeQuantity"].ToString() + " Remaining";
                 productXLSizeQuantity.Text = reader["productXLSizeQuantity"].ToString() + " Remaining";
+                selectedQuantity.Attributes["max"] = reader["productSSizeQuantity"].ToString();
             }
 
             reader.Close();
@@ -101,11 +101,36 @@ namespace MWMAssignment
             }
             else
             {
-                if (isQuantityValid())
-                {
-                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-                    con.Open();
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "showToast();", true);
 
+                string userId = Session["userId"].ToString();
+                string productId = Request.QueryString["productId"];
+                string selectedSize = sizeDropdown.SelectedItem.Text;
+                int quantityToAdd = int.Parse(selectedQuantity.Text);
+
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+                con.Open();
+
+                string checkQuery = "SELECT COUNT(*) FROM cartTable WHERE userId = @userId AND productId = @productId AND selectedSize = @selectedSize";
+                SqlCommand checkCommand = new SqlCommand(checkQuery, con);
+                checkCommand.Parameters.AddWithValue("@userId", userId);
+                checkCommand.Parameters.AddWithValue("@productId", productId);
+                checkCommand.Parameters.AddWithValue("@selectedSize", selectedSize);
+
+                int itemCount = (int)checkCommand.ExecuteScalar();
+
+                if (itemCount > 0)
+                {
+                    string updateQuery = "UPDATE cartTable SET selectedQuantity = selectedQuantity + @quantity WHERE userId = @userId AND productId = @productId AND selectedSize = @selectedSize";
+                    SqlCommand updateCommand = new SqlCommand(updateQuery, con);
+                    updateCommand.Parameters.AddWithValue("@quantity", quantityToAdd);
+                    updateCommand.Parameters.AddWithValue("@userId", userId);
+                    updateCommand.Parameters.AddWithValue("@productId", productId);
+                    updateCommand.Parameters.AddWithValue("@selectedSize", selectedSize);
+                    updateCommand.ExecuteNonQuery();
+                }
+                else
+                {
                     string query = "INSERT INTO cartTable(productId, userId, selectedSize, selectedQuantity) VALUES (@productId, @userId, @selectedSize, @selectedQuantity)";
                     SqlCommand command = new SqlCommand(query, con);
                     command.Parameters.AddWithValue("@productId", Request.QueryString["productId"]);
@@ -114,73 +139,41 @@ namespace MWMAssignment
                     command.Parameters.AddWithValue("@selectedQuantity", selectedQuantity.Text);
                     command.ExecuteNonQuery();
                 }
-                else
-                {
-                    return;
-                }
             }
         }
 
         protected bool isQuantityValid()
         {
-            if (int.Parse(selectedQuantity.Text) < 1)
-            {
-                validationMessage.Text = "Please enter a valid quantity.";
-                validationMessage.Visible = true;
-                return false;
-            }
-
-            int availableQty = 0;
-            string selectedSize = sizeDropdown.SelectedValue;
-
-            if (selectedSize == "S")
-            {
-                availableQty = int.Parse(productSSizeQuantity.Text.Split(' ')[0]);
-            }
-            else if (selectedSize == "M")
-            {
-                availableQty = int.Parse(productMSizeQuantity.Text.Split(' ')[0]);
-            }
-            else if (selectedSize == "L")
-            {
-                availableQty = int.Parse(productLSizeQuantity.Text.Split(' ')[0]);
-            }
-            else if (selectedSize == "XL")
-            {
-                availableQty = int.Parse(productXLSizeQuantity.Text.Split(' ')[0]);
-            }
-
-            if (int.Parse(selectedQuantity.Text) > availableQty)
-            {
-                validationMessage.Text = "Selected quantity exceeds available stock.";
-                validationMessage.Visible = true;
-                return false;
-            }
             return true;
         }
 
         protected void sizeDropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
+            hideAllSizeQuantity();
+            string availableQty = "1";
+
             if (sizeDropdown.SelectedValue == "S")
             {
-                hideAllSizeQuantity();
                 productSSizeQuantity.Visible = true;
+                availableQty = productSSizeQuantity.Text.Split(' ')[0];
             }
             else if (sizeDropdown.SelectedValue == "M")
             {
-                hideAllSizeQuantity();
                 productMSizeQuantity.Visible = true;
+                availableQty = productMSizeQuantity.Text.Split(' ')[0];
             }
             else if (sizeDropdown.SelectedValue == "L")
             {
-                hideAllSizeQuantity();
                 productLSizeQuantity.Visible = true;
+                availableQty = productLSizeQuantity.Text.Split(' ')[0];
             }
             else if (sizeDropdown.SelectedValue == "XL")
             {
-                hideAllSizeQuantity();
                 productXLSizeQuantity.Visible = true;
+                availableQty = productXLSizeQuantity.Text.Split(' ')[0];
             }
+
+            selectedQuantity.Attributes["max"] = availableQty;
         }
     }
 }

@@ -41,7 +41,7 @@ namespace MWMAssignment
 
             reader.Close();
 
-            if (userName != null && userId != null)
+            if (!string.IsNullOrEmpty(userId))
             {
                 if (isEnabled)
                 {
