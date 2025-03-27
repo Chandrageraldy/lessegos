@@ -25,7 +25,7 @@ namespace MWMAssignment
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             con.Open();
 
-            string query = "SELECT * FROM productTable WHERE isEnabled = 1 ";
+            string query = "SELECT * FROM productTable WHERE isEnabled = 1";
             SqlDataAdapter dataAdapter = new SqlDataAdapter(query, con);
             DataTable dataTable = new DataTable();
 

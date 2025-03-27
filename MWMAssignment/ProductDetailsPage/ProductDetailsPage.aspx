@@ -47,7 +47,7 @@
                     <div id="alertToast" class="toast alert-toast" role="alert">
                         <div class="d-flex">
                             <div class="toast-body">
-                                Hello, world! This is a toast message.
+                                Product has been added to your cart
                             </div>
                             <button type="button" class="btn-close btn-close-black me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                         </div>

@@ -12,7 +12,7 @@
                         <p class="caption">LESSEGOS CLOTHING</p>
                         <h1 class="title">WELCOME TO LESSEGOS</h1>
                         <p class="description">An Indonesian streetwear storytelling brand that pays homage to the culture, nostalgia, and everyday experiences of growing up in Indonesia.</p>
-                        <asp:Button runat="server" Text="SHOP NOW" ID="shopNowButton1" class="shop-now-button" OnClick="shopNowButton1_Click"/>
+                        <asp:Button runat="server" Text="SHOP NOW" ID="shopNowButton1" class="shop-now-button" OnClick="shopNowButton1_Click" />
                     </div>
                 </div>
                 <div class="col-xl-7 column">
@@ -32,29 +32,19 @@
             </div>
         </section>
         <section class="new-release-section">
-            <h2 class="new-release-title">NEW RELEASE  </h2>
+            <asp:Label runat="server" ID="newReleaseTitle" class="new-release-title">NEW RELEASE  </asp:Label>
             <div class="new-release-container row">
-                <div class="col-xl-3 col-md-3 col-6 best-seller-col">
-                    <img src="../Assets/shirt1.png" alt="Shirt 1" class="item" />
-                    <p class="item-name">White Oversize Fleur Peace</p>
-                    <p class="item-price">Rp 250.000</p>
-                </div>
-                <div class="col-xl-3 col-md-3 col-6 best-seller-col">
-                    <img src="../Assets/shirt3.png" alt="Shirt 2" class="item" />
-
-                    <p class="item-name">Black Boxy True Friends</p>
-                    <p class="item-price">Rp 250.000</p>
-                </div>
-                <div class="col-xl-3 col-md-3 col-6 best-seller-col">
-                    <img src="../Assets/shirt2.png" alt="Shirt 3" class="item" />
-                    <p class="item-name">White Oversize Asesino Craneo</p>
-                    <p class="item-price">Rp 250.000</p>
-                </div>
-                <div class="col-xl-3 col-md-3 col-6 best-seller-col">
-                    <img src="../Assets/shirt4.png" alt="Shirt 4" class="item" />
-                    <p class="item-name">Black Oversize Helios Cat Mask</p>
-                    <p class="item-price">Rp 250.000</p>
-                </div>
+                <asp:Repeater ID="rptProducts" runat="server">
+                    <ItemTemplate>
+                        <div class="col-xl-3 col-md-3 col-6">
+                            <asp:LinkButton runat="server" ID="item" CommandArgument='<%# Eval("productId") %>' OnClick="item_Click">
+                                <asp:Image runat="server" ImageUrl='<%# Eval("productFrontImage") %>' CssClass="item-image"/>
+                                <asp:Label runat="server" class="item-name" Text='<%# Eval("productName") %>'></asp:Label>
+                                <asp:Label runat="server" class="item-price" Text='<%# "Rp " + String.Format("{0:N0}", Eval("productPrice")) %>'></asp:Label>
+                            </asp:LinkButton>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
             </div>
             <asp:Button runat="server" class="browse-all-button" Text="BROWSE ALL" OnClick="browseAllButton_Click" ID="browseAllButton" />
         </section>

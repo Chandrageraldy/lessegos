@@ -25,7 +25,16 @@ namespace MWMAssignment
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             con.Open();
 
-            string query = "SELECT * FROM categoryTable";
+            string query = @"
+            SELECT 
+                c.categoryId, 
+                c.categoryName, 
+                c.categoryImageUrl, 
+                COUNT(p.productId) AS productCount
+            FROM categoryTable c
+            LEFT JOIN productTable p ON c.categoryId = p.categoryId AND p.isEnabled = 1
+            GROUP BY c.categoryId, c.categoryName, c.categoryImageUrl;";
+
             SqlDataAdapter dataAdapter = new SqlDataAdapter(query, con);
             DataTable dataTable = new DataTable();
 

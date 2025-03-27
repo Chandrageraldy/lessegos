@@ -5,12 +5,13 @@
     .shop-page .shop-section {
         margin: 3rem auto;
         width: 85%;
+        min-height: 50vh;
     }
 
     .shop-page .shop-title {
         font-size: 2.5rem;
         font-weight: 700;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         letter-spacing: 0.1rem;
     }
 

@@ -16,6 +16,7 @@
                                     <asp:Image runat="server" ImageUrl='<%# Eval("categoryImageUrl") %>' class="category-image" />
                                 </div>
                                 <asp:Label runat="server" class="category-name" Text='<%# Eval("categoryName") %>'></asp:Label>
+                                <asp:Label runat="server" class="product-count" Text='<%# Eval("productCount") + " items" %>'></asp:Label>
                             </asp:LinkButton>
                         </div>
                     </ItemTemplate>

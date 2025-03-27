@@ -29,12 +29,22 @@
     .category-page .category-name {
         margin-top: 0.6rem;
         text-align: center;
-        font-weight: 400;
+        font-weight: 500;
         display: block;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         color: black;
+    }
+
+    .category-page .product-count {
+        text-align: center;
+        font-weight: 400;
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: grey;
     }
 
     .category-page a {

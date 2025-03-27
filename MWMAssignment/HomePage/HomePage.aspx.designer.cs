@@ -33,6 +33,24 @@ namespace MWMAssignment
         protected global::System.Web.UI.WebControls.Button shopNowButton2;
 
         /// <summary>
+        /// newReleaseTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label newReleaseTitle;
+
+        /// <summary>
+        /// rptProducts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptProducts;
+
+        /// <summary>
         /// browseAllButton control.
         /// </summary>
         /// <remarks>
