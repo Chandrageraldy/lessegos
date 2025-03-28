@@ -51,6 +51,10 @@
         text-decoration: none;
     }
 
+    .category-page .no-products-label {
+        display: block;
+    }
+
 @media (max-width: 840px) {
     .category-page .category-section {
         width: 95%;

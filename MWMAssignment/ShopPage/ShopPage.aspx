@@ -7,6 +7,7 @@
     <div class="shop-page">
         <section class="shop-section">
             <h2 class="shop-title">SHOP ALL</h2>
+            <asp:Label ID="noProductsLabel" runat="server" CssClass="no-products-label" Text="No products available yet." Visible="false"></asp:Label>
             <div class="shop-container row">
                 <asp:Repeater ID="rptProducts" runat="server">
                     <ItemTemplate>

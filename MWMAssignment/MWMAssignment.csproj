@@ -73,17 +73,9 @@
     </Content>
     <Content Include="Assets\brandAdminLogo.png" />
     <Content Include="Assets\brandLogo.png" />
-    <Content Include="Assets\Category Hoodie.jpg" />
     <Content Include="Assets\Category Placeholder.png" />
     <Content Include="Assets\homeMiddle.png" />
     <Content Include="Assets\homeHeader.jpg" />
-    <Content Include="Assets\shirt1.png" />
-    <Content Include="Assets\shirt1alt1.png" />
-    <Content Include="Assets\shirt1alt2.png" />
-    <Content Include="Assets\shirt1back.png" />
-    <Content Include="Assets\shirt2.png" />
-    <Content Include="Assets\shirt3.png" />
-    <Content Include="Assets\shirt4.png" />
     <Content Include="AuthAdminPage\AuthAdminPage.css" />
     <Content Include="AuthPage\AuthPage.css" />
     <Content Include="CategoriesPage\CategoriesPage.css" />
@@ -105,6 +97,9 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="CreateProductAdminPage\CreateProductAdminPage.css" />
+    <Content Include="EditCategoryAdminPage\EditCategoryAdminPage.css" />
+    <Content Include="EditProductAdminPage\EditProductAdminPage.css" />
+    <Content Include="EditUserAdminPage\EditUserAdminPage.css" />
     <Content Include="ManageCategoriesAdminPage\ManageCategoriesAdminPage.css" />
     <Content Include="ManageProductsAdminPage\ManageProductsAdminPage.css" />
     <Content Include="HomePage\HomePage.css" />
@@ -136,6 +131,9 @@
     <Content Include="ManageUsersAdminPage\ManageUsersAdminPage.aspx" />
     <Content Include="CreateProductAdminPage\CreateProductAdminPage.aspx" />
     <Content Include="CategoryProductPage\CategoryProductPage.aspx" />
+    <Content Include="EditProductAdminPage\EditProductAdminPage.aspx" />
+    <Content Include="EditCategoryAdminPage\EditCategoryAdminPage.aspx" />
+    <Content Include="EditUserAdminPage\EditUserAdminPage.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MasterAdminPage.Master.cs">
@@ -258,6 +256,27 @@
     <Compile Include="CategoryProductPage\CategoryProductPage.aspx.designer.cs">
       <DependentUpon>CategoryProductPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EditProductAdminPage\EditProductAdminPage.aspx.cs">
+      <DependentUpon>EditProductAdminPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditProductAdminPage\EditProductAdminPage.aspx.designer.cs">
+      <DependentUpon>EditProductAdminPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditCategoryAdminPage\EditCategoryAdminPage.aspx.cs">
+      <DependentUpon>EditCategoryAdminPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditCategoryAdminPage\EditCategoryAdminPage.aspx.designer.cs">
+      <DependentUpon>EditCategoryAdminPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditUserAdminPage\EditUserAdminPage.aspx.cs">
+      <DependentUpon>EditUserAdminPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditUserAdminPage\EditUserAdminPage.aspx.designer.cs">
+      <DependentUpon>EditUserAdminPage.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage.Master" />
@@ -292,7 +311,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="OrderAdminPage\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

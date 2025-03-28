@@ -23,11 +23,11 @@ namespace MWMAssignment
 
             if (!IsPostBack)
             {
-                loadCategories();
+                LoadCategories();
             }
         }
 
-        private void loadCategories()
+        private void LoadCategories()
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             con.Open();

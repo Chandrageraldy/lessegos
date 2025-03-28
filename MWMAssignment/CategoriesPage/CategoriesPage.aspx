@@ -7,6 +7,7 @@
     <div class="category-page">
         <section class="category-section">
             <h2 class="category-title">CATEGORIES</h2>
+            <asp:Label ID="noProductsLabel" runat="server" CssClass="no-products-label" Text="No products available yet." Visible="false"></asp:Label>
             <div class="category-container row">
                 <asp:Repeater ID="rptCategories" runat="server">
                     <ItemTemplate>

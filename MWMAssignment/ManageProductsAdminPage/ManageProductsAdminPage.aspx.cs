@@ -76,6 +76,8 @@ namespace MWMAssignment
         {
             LinkButton btn = (LinkButton)sender;
             string productId = btn.CommandArgument;
+
+            Response.Redirect("../EditProductAdminPage/EditProductAdminPage.aspx?productId=" + productId);
         }
 
         protected void toggleStatusButton_Click(object sender, EventArgs e)

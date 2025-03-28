@@ -34,7 +34,7 @@
                     <div class="modal-body">
                         <h3>CREATE NEW CATEGORY</h3>
                         <div class="title-text-field-container">
-                            <p class="text-field-title">CATEGORY TITLE:</p>
+                            <p class="text-field-title">CATEGORY NAME:</p>
                             <asp:TextBox runat="server" ID="categoryName" placeholder="" class="text-field" />
                         </div>
                         <div class="image-upload-container">

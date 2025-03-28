@@ -31,6 +31,11 @@ namespace MWMAssignment
 
             dataAdapter.Fill(dataTable);
 
+            if (dataTable.Rows.Count == 0)
+            {
+                noProductsLabel.Visible = true;
+            }
+
             rptProducts.DataSource = dataTable;
             rptProducts.DataBind();
 

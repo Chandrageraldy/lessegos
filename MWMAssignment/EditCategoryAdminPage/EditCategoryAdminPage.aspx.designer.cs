@@ -11,34 +11,43 @@ namespace MWMAssignment
 {
 
 
-    public partial class WebForm14
+    public partial class WebForm16
     {
 
         /// <summary>
-        /// categoryProductTitle control.
+        /// categoryName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label categoryProductTitle;
+        protected global::System.Web.UI.WebControls.TextBox categoryName;
 
         /// <summary>
-        /// noProductsLabel control.
+        /// categoryImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label noProductsLabel;
+        protected global::System.Web.UI.WebControls.FileUpload categoryImage;
 
         /// <summary>
-        /// rptProducts control.
+        /// currentCategoryImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptProducts;
+        protected global::System.Web.UI.WebControls.Image currentCategoryImage;
+
+        /// <summary>
+        /// editCategoryButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button editCategoryButton;
     }
 }

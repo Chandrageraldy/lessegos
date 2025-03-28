@@ -85,7 +85,7 @@ namespace MWMAssignment
             LinkButton btn = (LinkButton)sender;
             int categoryId = Convert.ToInt32(btn.CommandArgument);
 
-
+            Response.Redirect("../EditCategoryAdminPage/EditCategoryAdminPage.aspx?categoryId=" + categoryId);
         }
 
         protected void confirmDeleteButton_Click(object sender, EventArgs e)
@@ -102,6 +102,11 @@ namespace MWMAssignment
 
             con.Close();
             Response.Redirect("../ManageCategoriesAdminPage/ManageCategoriesAdminPage.aspx");
+        }
+
+        protected void updateCategoryButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
