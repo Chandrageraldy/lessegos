@@ -103,10 +103,5 @@ namespace MWMAssignment
             con.Close();
             Response.Redirect("../ManageCategoriesAdminPage/ManageCategoriesAdminPage.aspx");
         }
-
-        protected void updateCategoryButton_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -62,7 +62,9 @@ namespace MWMAssignment
 
         protected void item_Click(object sender, EventArgs e)
         {
-
+            LinkButton btn = (LinkButton)sender;
+            string productId = btn.CommandArgument;
+            Response.Redirect("../ProductDetailsPage/ProductDetailsPage.aspx?productId=" + productId);
         }
     }
 }

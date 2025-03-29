@@ -21,7 +21,7 @@
         width: 85%;
         background-color: white;
         margin: auto;
-        min-height: 35vh;
+        min-height: 30vh;
         padding: 1.5rem;
         margin-bottom: 35vh;
     }
@@ -85,3 +85,17 @@
         box-sizing: border-box;
         max-height: 2.25rem;
     }
+
+@media (max-width: 840px) {
+    .edit-category-page .header-container {
+        width: 95%;
+    }
+
+    .edit-category-page h2 {
+        font-size: 1.2rem;
+    }
+
+    .edit-category-page .edit-category-container {
+        width: 95%;
+    }
+}

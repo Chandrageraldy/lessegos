@@ -91,7 +91,10 @@ namespace MWMAssignment
 
         protected void editUserButton_Click(object sender, EventArgs e)
         {
+            LinkButton btn = (LinkButton)sender;
+            int userId = Convert.ToInt32(btn.CommandArgument);
 
+            Response.Redirect("../EditUserAdminPage/EditUserAdminPage.aspx?userId=" + userId);
         }
     }
 }

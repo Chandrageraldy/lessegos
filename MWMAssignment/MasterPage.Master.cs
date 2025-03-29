@@ -15,14 +15,14 @@ namespace MWMAssignment
             {
                 if (Session["userName"] != null)
                 {
-                    profileButton.Visible = true;
+                    manageProfileButton.Visible = true;
                     signInButton.Visible = false;
-                    profileButton.Text = Session["userName"].ToString();
+                    manageProfileButton.Text = Session["userName"].ToString();
                 }
                 else
                 {
                     signInButton.Visible = true;
-                    profileButton.Visible = false;
+                    manageProfileButton.Visible = false;
                 }
             }
         }
@@ -35,6 +35,11 @@ namespace MWMAssignment
         protected void shoppingCartButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("../ShoppingCartPage/ShoppingCartPage.aspx");
+        }
+
+        protected void manageProfileButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../ManageProfilePage/ManageProfilePage.aspx");
         }
     }
 }

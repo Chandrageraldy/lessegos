@@ -30,7 +30,7 @@ namespace MWMAssignment
 
                 string checkEmailQuery = "SELECT COUNT(*) FROM userTable WHERE email = @email";
                 SqlCommand checkEmailCommand = new SqlCommand(checkEmailQuery, con);
-                checkEmailCommand.Parameters.AddWithValue("@email", email.Text);
+                checkEmailCommand.Parameters.AddWithValue("@email", email.Text.ToLower());
                 int checkEmail = Convert.ToInt32(checkEmailCommand.ExecuteScalar().ToString());
 
                 if (checkUsername > 0)

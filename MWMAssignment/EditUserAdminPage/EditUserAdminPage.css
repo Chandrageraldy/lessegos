@@ -1,1 +1,85 @@
-﻿
+﻿.edit-user-page {
+    font-family: karla;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: #F7F7F7;
+}
+
+    .edit-user-page .header-container {
+        width: 85%;
+        margin: auto;
+    }
+
+    .edit-user-page h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        letter-spacing: 0.1rem;
+    }
+
+    .edit-user-page .edit-user-container {
+        width: 85%;
+        background-color: white;
+        margin: auto;
+        min-height: 30vh;
+        padding: 1.5rem;
+        margin-bottom: 10vh;
+    }
+
+    /*EDIT CATEGORY CONTAINER*/
+    .edit-user-page .text-field-title {
+        margin: 0;
+        font-weight: 700;
+        align-self: center;
+    }
+
+    .edit-user-page .text-field {
+        width: 100%;
+        height: 2.75rem;
+        text-indent: 0.7rem;
+        border-radius: 0.3rem;
+        border: 1px solid gray;
+        margin-bottom: 1rem;
+    }
+
+    .edit-user-page .edit-user-button {
+        padding: 0.7rem;
+        width: 100%;
+        background-color: black;
+        color: white;
+        font-weight: 300;
+        border: none;
+        border-radius: 0.4rem;
+        margin-top: 1rem;
+    }
+
+    .edit-user-page .title-row {
+        display: flex;
+        margin-bottom: 0.5rem;
+        align-items: center;
+    }
+
+    .edit-user-page .validation-message {
+        color: red;
+    }
+
+    .edit-user-page .error-message {
+        text-align: center;
+        color: red;
+        display: block;
+        margin-top: 1rem;
+    }
+
+@media (max-width: 840px) {
+    .edit-user-page .header-container {
+        width: 95%;
+    }
+
+    .edit-user-page h2 {
+        font-size: 1.2rem;
+    }
+
+    .edit-user-page .edit-user-container {
+        width: 95%;
+    }
+}
