@@ -41,7 +41,7 @@ namespace MWMAssignment
                         Session["email"] = getUsernameDataReader["email"].ToString().Trim();
                     }
 
-                    Response.Redirect("../HomeAdminPage/HomeAdminPage.aspx");
+                    Response.Redirect("../ManageProductsAdminPage/ManageProductsAdminPage.aspx");
                 }
                 else
                 {

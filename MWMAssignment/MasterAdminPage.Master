@@ -28,7 +28,7 @@
         <div class="navigation-bar">
             <nav class="navbar navbar-expand-lg">
                 <div class="navigation-container">
-                    <a href="../HomeAdminPage/HomeAdminPage.aspx">
+                    <a href="../ManageProductsAdminPage/ManageProductsAdminPage.aspx">
                         <img class="navbar-brand nav-logo" src="../Assets/brandAdminLogo.png" alt="Brand Logo">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,6 +45,9 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="../ManageUsersAdminPage/ManageUsersAdminPage.aspx">MANAGE USERS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../ManageOrdersAdminPage/PendingOrdersAdminPage.aspx">MANAGE ORDERS</a>
                             </li>
                         </ul>
                         <!-- RIGHT NAVIGATION BAR -->

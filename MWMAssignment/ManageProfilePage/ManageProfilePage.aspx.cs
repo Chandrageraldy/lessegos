@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -23,6 +24,7 @@ namespace MWMAssignment
             if (!IsPostBack)
             {
                 LoadUser();
+                LoadOrders();
             }
         }
 
@@ -117,6 +119,75 @@ namespace MWMAssignment
         {
             Session.Clear();
             Response.Redirect("../AuthPage/LoginPage.aspx");
+        }
+
+        private void LoadOrders()
+        {
+            string userId = Session["userId"].ToString();
+
+            string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = @"SELECT 
+                    o.orderId, 
+                    o.customerEmail, 
+                    o.customerAddress, 
+                    o.customerPhoneNumber, 
+                    o.customerPostCode, 
+                    o.orderStatus,
+                    o.orderDateTime,
+                    STUFF(
+                        (SELECT '<br>' + p.productName + ' (' + p.selectedSize + ') x' + 
+                                CAST(p.selectedQuantity AS NVARCHAR(10))
+                         FROM productOrderTable p
+                         WHERE p.orderId = o.orderId
+                         FOR XML PATH (''), TYPE).value('.', 'NVARCHAR(MAX)'), 1, 4, ''
+                    ) AS products,
+                    (SELECT SUM(p.selectedQuantity * p.productPrice) 
+                     FROM productOrderTable p 
+                     WHERE p.orderId = o.orderId) AS amount
+                FROM orderTable o
+                WHERE o.userId = @userId
+                ORDER BY o.orderId;";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@userId", userId);
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        sda.Fill(dt);
+
+                        if (dt.Rows.Count == 0)
+                        {
+                            orderHistoryHeader.Visible = false;
+                        }
+
+                        orderHistoryGrid.DataSource = dt;
+                        orderHistoryGrid.DataBind();
+                    }
+                }
+            }
+        }
+
+        protected void orderReceivedButton_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            int orderId = Convert.ToInt32(btn.CommandArgument);
+
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            con.Open();
+
+            string query = @"UPDATE orderTable SET orderStatus = @orderStatus WHERE orderId = @orderId";
+            SqlCommand command = new SqlCommand(query, con);
+            command.Parameters.AddWithValue("@orderStatus", "Completed");
+            command.Parameters.AddWithValue("@orderId", orderId);
+            command.ExecuteNonQuery();
+
+            con.Close();
+
+            Response.Redirect("../ManageProfilePage/ManageProfilePage.aspx");
         }
     }
 }

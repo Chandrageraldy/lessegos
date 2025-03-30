@@ -1,0 +1,96 @@
+﻿.manage-orders-page {
+    font-family: karla;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: #F7F7F7;
+    font-size: 0.9rem;
+}
+    /*HEADER*/
+    .manage-orders-page .header-container {
+        width: 85%;
+        margin: auto;
+    }
+
+    .manage-orders-page h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        letter-spacing: 0.1rem;
+    }
+
+    /*TABBAR*/
+    .manage-orders-page .order-tabbar {
+        width: 85%;
+        margin: auto;
+    }
+
+    .manage-orders-page .nav-link {
+        color: black;
+    }
+
+    /*MANAGE CATEGORIES CONTAINER*/
+    .manage-orders-page .manage-orders-container {
+        width: 85%;
+        background-color: white;
+        margin: auto;
+        min-height: 65vh;
+    }
+
+    /*TABLE*/
+    .manage-orders-page th {
+        background-color: #f6f6f6;
+    }
+
+    .manage-orders-page .action-column {
+        text-align: right;
+    }
+
+    .manage-orders-page .ship-order-button {
+        background-color: #f1fdf3;
+        color: #71957f;
+        border: solid 1px #71957f;
+        border-radius: 0.2rem;
+        padding: 0.3rem;
+        font-weight: 500;
+    }
+
+    .manage-orders-page .cancel-order-button {
+        background-color: #f7e5e4;
+        color: #a15d51;
+        border: solid 1px #a15d51;
+        border-radius: 0.2rem;
+        padding: 0.3rem;
+        font-weight: 500;
+    }
+
+    .manage-orders-page .shipping-status-label {
+        color: brown;
+        font-weight: 500;
+        font-size: 0.9rem;
+    }
+
+    .manage-orders-page .completed-status-label {
+        color: green;
+        font-weight: 500;
+        font-size: 0.9rem;
+    }
+
+    .manage-orders-page .cancelled-status-label {
+        color: red;
+        font-weight: 500;
+        font-size: 0.9rem;
+    }
+
+    @media (max-width: 840px) {
+        .manage-orders-page .header-container {
+        width: 95%;
+    }
+
+    .manage-orders-page h2 {
+        font-size: 1.2rem;
+    }
+
+    .manage-orders-page .manage-orders-container {
+        width: 95%;
+    }
+}

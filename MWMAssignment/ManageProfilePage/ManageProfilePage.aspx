@@ -122,7 +122,58 @@
 
         <section>
             <div class="order-history-container">
-                <h3>Order History</h3>
+                <asp:Label runat="server" ID="orderHistoryHeader" CssClass="order-history-header">Order History</asp:Label>
+                <asp:GridView ID="orderHistoryGrid" runat="server" class="table" AutoGenerateColumns="False">
+                    <Columns>
+                        <asp:TemplateField HeaderText="ID">
+                            <ItemTemplate>
+                                # <%# Eval("orderId") %>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+
+                        <asp:BoundField DataField="orderDateTime" HeaderText="Date" DataFormatString="{0:yyyy-MM-dd HH:mm:ss}" />
+
+                        <asp:TemplateField HeaderText="Delivery Information">
+                            <ItemTemplate>
+                                <div>
+                                    <%# Eval("customerAddress") %>
+                                    <br />
+                                    <%# Eval("customerPostCode") %>
+                                    <br />
+                                    <%# Eval("customerPhoneNumber") %>
+                                    <br />
+                                    <%# Eval("customerEmail") %>
+                                </div>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+
+                        <asp:TemplateField HeaderText="Products">
+                            <ItemTemplate>
+                                <%# Eval("products") %>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+
+                        <asp:TemplateField HeaderText="Amount">
+                            <ItemTemplate>
+                                Rp <%# Eval("amount", "{0:N0}") %>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+
+                        <asp:TemplateField HeaderText="Status">
+                            <ItemTemplate>
+                                <asp:Button ID="orderReceivedButton" runat="server" Text="Order Received" CssClass="order-received-button" CommandArgument='<%# Eval("orderId") %>' Visible='<%# Eval("orderStatus").ToString() == "Shipping" %>' OnClick="orderReceivedButton_Click" />
+
+                                <asp:Label ID="statusLabel" runat="server"
+                                    CssClass='<%# Eval("orderStatus").ToString() == "Pending" ? "pending-status-label" :
+                                      Eval("orderStatus").ToString() == "Completed" ? "completed-status-label" :
+                                      Eval("orderStatus").ToString() == "Cancelled" ? "cancelled-status-label" : "" %>'
+                                    Visible='<%# Eval("orderStatus").ToString() != "Shipping" %>'>
+                                    <%# Eval("orderStatus") %>
+                                </asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                </asp:GridView>
             </div>
         </section>
     </div>

@@ -99,6 +99,58 @@
         align-self: center;
     }
 
+    /*TABLE*/
+    .manage-profile-page .order-history-header {
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
+
+    .manage-profile-page .table {
+        margin-top: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .manage-profile-page th {
+        background-color: #f6f6f6;
+    }
+
+    .manage-profile-page .action-column {
+        text-align: right;
+    }
+
+    .manage-profile-page .pending-status-label {
+        color: cornflowerblue;
+        font-weight: 500;
+        font-size: 0.9rem;
+    }
+
+    .manage-profile-page .shipping-status-label {
+        color: brown;
+        font-weight: 500;
+        font-size: 0.9rem;
+    }
+
+    .manage-profile-page .completed-status-label {
+        color: green;
+        font-weight: 500;
+        font-size: 0.9rem;
+    }
+
+    .manage-profile-page .cancelled-status-label {
+        color: red;
+        font-weight: 500;
+        font-size: 0.9rem;
+    }
+
+    .manage-profile-page .order-received-button {
+        background-color: #f1fdf3;
+        color: #71957f;
+        border: solid 1px #71957f;
+        border-radius: 0.2rem;
+        padding: 0.3rem;
+        font-weight: 500;
+    }
+
 @media (max-width: 840px) {
     .manage-profile-page .header-container {
         width: 95%;

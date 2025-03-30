@@ -107,8 +107,8 @@
         font-weight: 600;
     }
 
-    @media (max-width: 840px) {
-        .manage-categories-page .header-container {
+@media (max-width: 840px) {
+    .manage-categories-page .header-container {
         width: 95%;
     }
 
