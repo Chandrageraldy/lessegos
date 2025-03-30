@@ -17,7 +17,7 @@
         </header>
 
         <section>
-            <div class="account-details-container">
+            <div class="profile-details-container">
                 <h3>Account Details</h3>
                 <div class="row">
                     <div class="col-xl-12 text-field-container">
@@ -58,6 +58,11 @@
                         </div>
                         <asp:TextBox runat="server" ID="password" placeholder="" class="text-field" />
                     </div>
+                </div>
+            </div>
+            <div class="profile-details-container">
+                <h3>Address Details</h3>
+                <div class="row">
                     <div class="col-xl-12 text-field-container">
                         <div class="title-row">
                             <p class="text-field-title">ADDRESS:</p>
@@ -76,6 +81,36 @@
                             <asp:RegularExpressionValidator runat="server" ControlToValidate="phoneNumber" ErrorMessage="* enter a valid phone number" CssClass="validation-message" ValidationExpression="^\+?[0-9]{7,15}$" Display="Dynamic"></asp:RegularExpressionValidator>
                         </div>
                         <asp:TextBox runat="server" ID="phoneNumber" placeholder="" class="text-field" />
+                    </div>
+                </div>
+            </div>
+            <div class="profile-details-container">
+                <h3>Payment Details</h3>
+                <div class="row">
+                    <div class="col-xl-12 text-field-container">
+                        <div class="title-row">
+                            <p class="text-field-title">CARD HOLDER NAME:</p>
+                        </div>
+                        <asp:TextBox runat="server" ID="cardHolderName" placeholder="" class="text-field" />
+                    </div>
+                    <div class="col-xl-12 text-field-container">
+                        <div class="title-row">
+                            <p class="text-field-title">CARD NUMBER:</p>
+                        </div>
+                        <asp:TextBox runat="server" ID="cardNumber" placeholder="" class="text-field" />
+                    </div>
+                    <div class="col-xl-6 text-field-container">
+                        <div class="title-row">
+                            <p class="text-field-title">EXP:</p>
+                            <asp:RegularExpressionValidator runat="server" ControlToValidate="exp" ErrorMessage="* enter a valid expiration date (MM/YY)" CssClass="validation-message" ValidationExpression="^(0[1-9]|1[0-2])\/\d{2}$" Display="Dynamic"></asp:RegularExpressionValidator>
+                        </div>
+                        <asp:TextBox runat="server" ID="exp" placeholder="MM/YY" class="text-field" />
+                    </div>
+                    <div class="col-xl-6 text-field-container">
+                        <div class="title-row">
+                            <p class="text-field-title">CVV:</p>
+                        </div>
+                        <asp:TextBox runat="server" ID="cvv" placeholder="" class="text-field" />
                     </div>
                     <div class="col-xl-12 text-field-container">
                         <asp:Button runat="server" class="update-profile-button" Text="Update Profile" ID="updateProfileButton" OnClick="updateProfileButton_Click" />

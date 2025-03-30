@@ -80,6 +80,7 @@
     <Content Include="AuthPage\AuthPage.css" />
     <Content Include="CategoriesPage\CategoriesPage.css" />
     <Content Include="CategoryProductPage\CategoryProductPage.css" />
+    <Content Include="CheckoutPage\CheckoutPage.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -136,6 +137,7 @@
     <Content Include="EditCategoryAdminPage\EditCategoryAdminPage.aspx" />
     <Content Include="EditUserAdminPage\EditUserAdminPage.aspx" />
     <Content Include="ManageProfilePage\ManageProfilePage.aspx" />
+    <Content Include="CheckoutPage\CheckoutPage.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MasterAdminPage.Master.cs">
@@ -285,6 +287,13 @@
     </Compile>
     <Compile Include="ManageProfilePage\ManageProfilePage.aspx.designer.cs">
       <DependentUpon>ManageProfilePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckoutPage\CheckoutPage.aspx.cs">
+      <DependentUpon>CheckoutPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckoutPage\CheckoutPage.aspx.designer.cs">
+      <DependentUpon>CheckoutPage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

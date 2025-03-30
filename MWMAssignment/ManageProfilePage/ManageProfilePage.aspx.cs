@@ -49,6 +49,10 @@ namespace MWMAssignment
                 address.Text = reader["address"].ToString();
                 postCode.Text = reader["postCode"].ToString();
                 phoneNumber.Text = reader["phoneNumber"].ToString();
+                cardHolderName.Text = reader["cardHolderName"].ToString();
+                cardNumber.Text = reader["cardNumber"].ToString();
+                cvv.Text = reader["cvv"].ToString();
+                exp.Text = reader["exp"].ToString();
             }
 
             con.Close();
@@ -84,7 +88,7 @@ namespace MWMAssignment
                 errorMessage.Text = "Email already exists. Please use a different email.";
             } else
             {
-                string query = @"UPDATE userTable SET userName = @userName, firstName = @firstName, lastName = @lastName, email = @email, address = @address, postCode = @postCode, phoneNumber = @phoneNumber, password = @password WHERE userId = @userId";
+                string query = @"UPDATE userTable SET userName = @userName, firstName = @firstName, lastName = @lastName, email = @email, address = @address, postCode = @postCode, phoneNumber = @phoneNumber, password = @password, cardHolderName = @cardHolderName, cardNumber = @cardNumber, cvv = @cvv, exp = @exp WHERE userId = @userId";
                 SqlCommand command = new SqlCommand(query, con);
                 command.Parameters.AddWithValue("@userName", userName.Text);
                 command.Parameters.AddWithValue("@firstName", firstName.Text);
@@ -95,6 +99,10 @@ namespace MWMAssignment
                 command.Parameters.AddWithValue("@postCode", string.IsNullOrEmpty(address.Text) ? (object)DBNull.Value : postCode.Text);
                 command.Parameters.AddWithValue("@phoneNumber", string.IsNullOrEmpty(address.Text) ? (object)DBNull.Value :  phoneNumber.Text);
                 command.Parameters.AddWithValue("@password", password.Text);
+                command.Parameters.AddWithValue("@cardHolderName", string.IsNullOrEmpty(cardHolderName.Text) ? (object)DBNull.Value : cardHolderName.Text);
+                command.Parameters.AddWithValue("@cardNumber", string.IsNullOrEmpty(cardNumber.Text) ? (object)DBNull.Value : cardNumber.Text);
+                command.Parameters.AddWithValue("@cvv", string.IsNullOrEmpty(cvv.Text) ? (object)DBNull.Value : cvv.Text);
+                command.Parameters.AddWithValue("@exp", string.IsNullOrEmpty(exp.Text) ? (object)DBNull.Value : exp.Text);
                 command.ExecuteNonQuery();
 
                 Session["userName"] = userName.Text;

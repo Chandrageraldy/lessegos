@@ -11,151 +11,151 @@ namespace MWMAssignment
 {
 
 
-    public partial class WebForm18
+    public partial class WebForm19
     {
 
         /// <summary>
-        /// logoutWelcome control.
+        /// customerFirstName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label logoutWelcome;
+        protected global::System.Web.UI.WebControls.TextBox customerFirstName;
 
         /// <summary>
-        /// logout control.
+        /// customerLastName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton logout;
+        protected global::System.Web.UI.WebControls.TextBox customerLastName;
 
         /// <summary>
-        /// userName control.
+        /// customerEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox userName;
+        protected global::System.Web.UI.WebControls.TextBox customerEmail;
 
         /// <summary>
-        /// firstName control.
+        /// customerPhoneNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox firstName;
+        protected global::System.Web.UI.WebControls.TextBox customerPhoneNumber;
 
         /// <summary>
-        /// lastName control.
+        /// customerAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox lastName;
+        protected global::System.Web.UI.WebControls.TextBox customerAddress;
 
         /// <summary>
-        /// email control.
+        /// customerPostCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox email;
+        protected global::System.Web.UI.WebControls.TextBox customerPostCode;
 
         /// <summary>
-        /// password control.
+        /// deliveryCheckbox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox password;
+        protected global::System.Web.UI.WebControls.CheckBox deliveryCheckbox;
 
         /// <summary>
-        /// address control.
+        /// customerCardHolderName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox address;
+        protected global::System.Web.UI.WebControls.TextBox customerCardHolderName;
 
         /// <summary>
-        /// postCode control.
+        /// customerCardNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox postCode;
+        protected global::System.Web.UI.WebControls.TextBox customerCardNumber;
 
         /// <summary>
-        /// phoneNumber control.
+        /// customerExp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox phoneNumber;
+        protected global::System.Web.UI.WebControls.TextBox customerExp;
 
         /// <summary>
-        /// cardHolderName control.
+        /// customerCvv control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox cardHolderName;
+        protected global::System.Web.UI.WebControls.TextBox customerCvv;
 
         /// <summary>
-        /// cardNumber control.
+        /// paymentCheckbox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox cardNumber;
+        protected global::System.Web.UI.WebControls.CheckBox paymentCheckbox;
 
         /// <summary>
-        /// exp control.
+        /// subtotalPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox exp;
+        protected global::System.Web.UI.WebControls.Label subtotalPrice;
 
         /// <summary>
-        /// cvv control.
+        /// totalPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox cvv;
+        protected global::System.Web.UI.WebControls.Label totalPrice;
 
         /// <summary>
-        /// updateProfileButton control.
+        /// itemGrid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button updateProfileButton;
+        protected global::System.Web.UI.WebControls.GridView itemGrid;
 
         /// <summary>
-        /// errorMessage control.
+        /// checkoutButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errorMessage;
+        protected global::System.Web.UI.WebControls.Button checkoutButton;
     }
 }

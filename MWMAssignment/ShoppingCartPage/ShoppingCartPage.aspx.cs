@@ -27,7 +27,7 @@ namespace MWMAssignment
 
         protected void checkoutButton_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("../CheckoutPage/CheckoutPage.aspx");
         }
 
         private void LoadShoppingCart()
