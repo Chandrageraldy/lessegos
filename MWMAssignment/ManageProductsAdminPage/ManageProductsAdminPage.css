@@ -200,9 +200,23 @@
         background-color: #f6f6f6;
     }
 
-.manage-users-page th {
-    background-color: #f6f6f6;
-}
+    /*SEARCH CONTAINER*/
+    .manage-products-page .search-container {
+        margin: auto;
+        width: 85%;
+        margin-bottom: 1rem;
+    }
+
+    .manage-products-page .search-button {
+        background-color: black;
+        color: white;
+        border: 0.1rem solid black;
+    }
+
+    .manage-products-page .search-text-field {
+        border: solid 0.1rem white;
+        text-indent: 0.3rem;
+    }
 
 @media (max-width: 840px) {
     .manage-products-page .header-container {
@@ -237,5 +251,9 @@
         padding-top: 0.2rem;
         padding-bottom: 0.2rem;
         font-size: 1rem;
+    }
+
+    .manage-products-page .search-container {
+        width: 95%;
     }
 }

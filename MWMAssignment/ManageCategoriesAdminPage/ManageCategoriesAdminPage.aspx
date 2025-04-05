@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterAdminPage.Master" AutoEventWireup="true" CodeBehind="ManageCategoriesAdminPage.aspx.cs" Inherits="MWMAssignment.WebForm7" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterAdminPage.Master" AutoEventWireup="true" CodeBehind="ManageCategoriesAdminPage.aspx.cs" Inherits="MWMAssignment.WebForm7" UnobtrusiveValidationMode="None" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../ManageCategoriesAdminPage/ManageCategoriesAdminPage.css" rel="stylesheet" />
@@ -34,19 +34,31 @@
                     <div class="modal-body">
                         <h3>CREATE NEW CATEGORY</h3>
                         <div class="title-text-field-container">
-                            <p class="text-field-title">CATEGORY NAME:</p>
-                            <asp:TextBox runat="server" ID="categoryName" placeholder="" class="text-field" />
+                            <div class="title-row">
+                                <p class="text-field-title">CATEGORY NAME:</p>
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="categoryName" ErrorMessage="* required" CssClass="validation-message" Display="Dynamic" ValidationGroup="categoryValidation"></asp:RequiredFieldValidator>
+                            </div>
+                            <asp:TextBox runat="server" ID="categoryName" placeholder="" class="text-field" ValidationGroup="categoryValidation" />
                         </div>
                         <div class="image-upload-container">
                             <p class="text-field-title">IMAGE:</p>
                             <asp:FileUpload runat="server" class="form-control" ID="categoryUploadedImage" />
                         </div>
-                        <asp:Button runat="server" class="create-category-button" Text="Create Category" ID="createCategoryButton" OnClick="createCategoryButton_Click" />
+                        <asp:Button runat="server" class="create-category-button" Text="Create Category" ID="createCategoryButton" OnClick="createCategoryButton_Click" ValidationGroup="categoryValidation" />
                     </div>
                 </div>
             </div>
         </div>
         <!-- MODAL -->
+
+        <!-- SEARCH CONTAINER -->
+        <section>
+            <div class="search-container">
+                <asp:TextBox runat="server" ID="searchTextField" CssClass="search-text-field" placeholder="Search category"></asp:TextBox>
+                <asp:Button runat="server" ID="searchButton" OnClick="searchButton_Click" Text="Search" CssClass="search-button" CausesValidation="false"/>
+            </div>
+        </section>
+        <!-- SEARCH CONTAINER -->
 
         <!-- MANAGE CATEGORIES CONTAINER -->
         <section>
@@ -78,8 +90,7 @@
                         <p class="delete-message">Are you sure you want to permanently delete this category?</p>
                         <div class="delete-modal-action-row">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                            <asp:Button runat="server" ID="confirmDeleteButton" CssClass="btn btn-danger" Text="Delete"
-                                OnClick="confirmDeleteButton_Click" />
+                            <asp:Button runat="server" ID="confirmDeleteButton" CssClass="btn btn-danger" Text="Delete" OnClick="confirmDeleteButton_Click" />
                         </div>
                     </div>
                 </div>

@@ -81,8 +81,26 @@
         font-size: 0.9rem;
     }
 
-    @media (max-width: 840px) {
-        .manage-orders-page .header-container {
+    /*SEARCH CONTAINER*/
+    .manage-orders-page .search-container {
+        margin: auto;
+        width: 85%;
+        margin-bottom: 1rem;
+    }
+
+    .manage-orders-page .search-button {
+        background-color: black;
+        color: white;
+        border: 0.1rem solid black;
+    }
+
+    .manage-orders-page .search-text-field {
+        border: solid 0.1rem white;
+        text-indent: 0.3rem;
+    }
+
+@media (max-width: 840px) {
+    .manage-orders-page .header-container {
         width: 95%;
     }
 
@@ -91,6 +109,14 @@
     }
 
     .manage-orders-page .manage-orders-container {
+        width: 95%;
+    }
+
+    .manage-orders-page .search-container {
+        width: 95%;
+    }
+
+    .manage-orders-page .order-tabbar {
         width: 95%;
     }
 }

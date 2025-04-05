@@ -25,25 +25,23 @@ namespace MWMAssignment
             }
         }
 
-        private void LoadUsers()
+        private void LoadUsers(string searchQuery = "")
         {
-            string connString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            con.Open();
 
-            using (SqlConnection con = new SqlConnection(connString))
-            {
-                string query = "SELECT userId, firstName, lastName, userName, email, isEnabled FROM userTable";
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
-                    {
-                        DataTable dt = new DataTable();
-                        sda.Fill(dt);
+            string query = "SELECT userId, firstName, lastName, userName, email, isEnabled FROM userTable WHERE userName LIKE @searchQuery OR userId LIKE @searchQuery";
+            SqlCommand command = new SqlCommand(query, con);
+            command.Parameters.AddWithValue("@searchQuery", "%" + searchQuery + "%");
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
 
-                        userGrid.DataSource = dt;
-                        userGrid.DataBind();
-                    }
-                }
-            }
+            DataTable dataTable = new DataTable();
+            dataAdapter.Fill(dataTable);
+
+            userGrid.DataSource = dataTable;
+            userGrid.DataBind();
+
+            con.Close();
         }
 
         protected void toggleStatusButton_Click(object sender, EventArgs e)
@@ -95,6 +93,12 @@ namespace MWMAssignment
             int userId = Convert.ToInt32(btn.CommandArgument);
 
             Response.Redirect("../EditUserAdminPage/EditUserAdminPage.aspx?userId=" + userId);
+        }
+
+        protected void searchButton_Click(object sender, EventArgs e)
+        {
+            string searchQuery = searchTextField.Text.Trim();
+            LoadUsers(searchQuery);
         }
     }
 }

@@ -26,13 +26,14 @@ namespace MWMAssignment
             }
         }
 
-        private void LoadCategories()
+        private void LoadCategories(string searchQuery = "")
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             con.Open();
 
-            string query = "SELECT categoryId, categoryName, categoryImageUrl FROM categoryTable";
+            string query = "SELECT categoryId, categoryName, categoryImageUrl FROM categoryTable WHERE categoryName LIKE @searchQuery OR categoryId LIKE @searchQuery";
             SqlCommand command = new SqlCommand(query, con);
+            command.Parameters.AddWithValue("@searchQuery", "%" + searchQuery + "%");
             SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
 
             DataTable dataTable = new DataTable();
@@ -91,6 +92,7 @@ namespace MWMAssignment
         protected void confirmDeleteButton_Click(object sender, EventArgs e)
         {
             string categoryId = hiddenCategoryId.Value;
+            Response.Write(categoryId);
 
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             con.Open();
@@ -102,6 +104,12 @@ namespace MWMAssignment
 
             con.Close();
             Response.Redirect("../ManageCategoriesAdminPage/ManageCategoriesAdminPage.aspx");
+        }
+
+        protected void searchButton_Click(object sender, EventArgs e)
+        {
+            string searchQuery = searchTextField.Text.Trim();
+            LoadCategories(searchQuery);
         }
     }
 }

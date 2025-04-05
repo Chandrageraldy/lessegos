@@ -96,6 +96,11 @@ namespace MWMAssignment
                             total += Convert.ToDecimal(row["productTotal"]);
                         }
 
+                        if (dt.Rows.Count == 0)
+                        {
+                            checkoutButton.Enabled = false;
+                        }
+
                         itemGrid.DataSource = dt;
                         itemGrid.DataBind();
 
@@ -212,7 +217,7 @@ namespace MWMAssignment
 
             con.Close();
 
-            Response.Redirect("../ShoppingCartPage/ShoppingCartPage.aspx");
+            Response.Redirect("../CheckoutPage/CheckoutPage.aspx");
         }
     }
 }

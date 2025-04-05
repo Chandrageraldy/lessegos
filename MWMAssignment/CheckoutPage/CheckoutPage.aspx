@@ -105,6 +105,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-xl-4">
                     <div class="order-summary-container">
                         <div class="order-summary-header">

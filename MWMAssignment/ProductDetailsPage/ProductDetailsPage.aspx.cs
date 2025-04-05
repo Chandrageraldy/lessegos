@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -21,6 +22,7 @@ namespace MWMAssignment
                     hideAllSizeQuantity();
                     productSSizeQuantity.Visible = true;
                     LoadProductDetails(productId);
+                    LoadReviews();
                 }
                 else
                 {
@@ -174,6 +176,61 @@ namespace MWMAssignment
             }
 
             selectedQuantity.Attributes["max"] = availableQty;
+        }
+
+        protected void addReviewButton_Click(object sender, EventArgs e)
+        {
+            string productId = Request.QueryString["productId"];
+
+            if (Session["userId"] == null)
+            {
+                Response.Redirect("../AuthPage/LoginPage.aspx");
+            }
+            else
+            {
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+                con.Open();
+
+                string query = "INSERT INTO reviewTable(review, userId, productId) VALUES (@review, @userId, @productId)";
+                SqlCommand command = new SqlCommand(query, con);
+                command.Parameters.AddWithValue("@review", review.Text);
+                command.Parameters.AddWithValue("@userId", Session["userId"].ToString());
+                command.Parameters.AddWithValue("@productId", productId);
+                command.ExecuteNonQuery();
+
+                Response.Redirect("../ProductDetailsPage/ProductDetailsPage.aspx?productId=" + productId);
+
+                con.Close();
+            }
+        }
+
+        protected void LoadReviews()
+        {
+            string productId = Request.QueryString["productId"];
+
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
+            {
+                con.Open();
+
+                string query = @"SELECT r.review, u.userName FROM reviewTable r 
+                         INNER JOIN userTable u ON r.userId = u.userId 
+                         WHERE r.productId = @productId";
+
+                SqlCommand command = new SqlCommand(query, con);
+                command.Parameters.AddWithValue("@productId", productId);
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+
+                if (dataTable.Rows.Count == 0)
+                {
+                    productReviewContainer.Visible = false;
+                }
+
+                rptReviews.DataSource = dataTable;
+                rptReviews.DataBind();
+
+            }
         }
     }
 }

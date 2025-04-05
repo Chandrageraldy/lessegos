@@ -49,6 +49,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="../ManageOrdersAdminPage/PendingOrdersAdminPage.aspx">MANAGE ORDERS</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../ManageReviewsAdminPage/ManageReviewsAdminPage.aspx">MANAGE REVIEWS</a>
+                            </li>
                         </ul>
                         <!-- RIGHT NAVIGATION BAR -->
                         <ul class="navbar-nav">

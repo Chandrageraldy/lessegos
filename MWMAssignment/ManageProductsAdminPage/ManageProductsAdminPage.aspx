@@ -25,6 +25,15 @@
         </section>
         <!-- HEADER -->
 
+        <!-- SEARCH CONTAINER -->
+        <section>
+            <div class="search-container">
+                <asp:TextBox runat="server" ID="searchTextField" CssClass="search-text-field" placeholder="Search product"></asp:TextBox>
+                <asp:Button runat="server" ID="searchButton" OnClick="searchButton_Click" Text="Search" CssClass="search-button" CausesValidation="false"/>
+            </div>
+        </section>
+        <!-- SEARCH CONTAINER -->
+
         <!-- MANAGE PRODUCTS CONTAINER -->
         <section>
             <div class="manage-products-container">

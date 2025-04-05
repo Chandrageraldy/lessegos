@@ -106,6 +106,7 @@
     <Content Include="ManageProductsAdminPage\ManageProductsAdminPage.css" />
     <Content Include="HomePage\HomePage.css" />
     <Content Include="ManageProfilePage\ManageProfilePage.css" />
+    <Content Include="ManageReviewsAdminPage\ManageReviewsAdminPage.css" />
     <Content Include="ManageUsersAdminPage\ManageUsersAdminPage.css" />
     <Content Include="MasterAdminPage.css" />
     <Content Include="MasterPage.css" />
@@ -142,6 +143,7 @@
     <Content Include="ManageOrdersAdminPage\ShippingOrdersAdminPage.aspx" />
     <Content Include="ManageOrdersAdminPage\CancelledOrdersAdminPage.aspx" />
     <Content Include="ManageOrdersAdminPage\CompletedOrdersAdminPage.aspx" />
+    <Content Include="ManageReviewsAdminPage\ManageReviewsAdminPage.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MasterAdminPage.Master.cs">
@@ -319,6 +321,13 @@
     </Compile>
     <Compile Include="ManageOrdersAdminPage\CompletedOrdersAdminPage.aspx.designer.cs">
       <DependentUpon>CompletedOrdersAdminPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageReviewsAdminPage\ManageReviewsAdminPage.aspx.cs">
+      <DependentUpon>ManageReviewsAdminPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageReviewsAdminPage\ManageReviewsAdminPage.aspx.designer.cs">
+      <DependentUpon>ManageReviewsAdminPage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

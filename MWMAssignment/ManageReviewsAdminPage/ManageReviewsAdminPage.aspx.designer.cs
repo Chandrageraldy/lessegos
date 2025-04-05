@@ -11,7 +11,7 @@ namespace MWMAssignment
 {
 
 
-    public partial class WebForm22
+    public partial class WebForm4
     {
 
         /// <summary>
@@ -33,12 +33,30 @@ namespace MWMAssignment
         protected global::System.Web.UI.WebControls.Button searchButton;
 
         /// <summary>
-        /// manageOrdersGrid control.
+        /// reviewGrid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView manageOrdersGrid;
+        protected global::System.Web.UI.WebControls.GridView reviewGrid;
+
+        /// <summary>
+        /// confirmDeleteButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button confirmDeleteButton;
+
+        /// <summary>
+        /// hiddenReviewId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hiddenReviewId;
     }
 }

@@ -111,13 +111,95 @@
         background-color: #d1fadf;
     }
 
-    /*MEDIA QUERY WITH MAX WIDTH OF 840PX*/
-    @media (max-width: 840px) {
-        .product-details-page .main-container {
+    /*PRODUCT REVIEW CONTAINER*/
+    .product-details-page .product-review-container {
+        width: 85%;
+        margin: auto;
+        min-height: 20vh;
+        margin-bottom: 3rem;
+    }
+
+    .product-details-page h2 {
+        margin-bottom: 2rem;
+    }
+
+    .product-details-page .review-row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .product-details-page .add-review-modal-button {
+        border: none;
+    }
+
+    .product-details-page .user-review-container {
+        padding: 1rem;
+        background-color: #efeeef;
+        margin-bottom: 1rem;
+    }
+
+    .product-details-page .user {
+        font-weight: 600;
+        font-size: 1rem;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    /*MODAL*/
+    .product-details-page h3 {
+        font-family: karla;
+        font-weight: 700;
+        font-size: 1.5rem;
+        letter-spacing: 0.1rem;
+        margin-bottom: 1rem;
+    }
+
+    .product-details-page .text-field-title {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+    }
+
+    .product-details-page .text-field {
+        width: 100%;
+        height: 2.75rem;
+        border-radius: 0.3rem;
+        border: 1px solid gray;
+        padding: 0.5rem;
+    }
+
+    .product-details-page .add-review-button {
+        padding: 0.7rem;
+        width: 100%;
+        background-color: black;
+        color: white;
+        font-weight: 300;
+        border: none;
+        border-radius: 0.4rem;
+        margin-top: 1rem;
+    }
+
+    .product-details-page .title-row {
+        display: flex;
+        margin-bottom: 0.5rem;
+        align-items: center;
+    }
+
+    .product-details-page .validation-message {
+        color: red;
+    }
+
+/*MEDIA QUERY WITH MAX WIDTH OF 840PX*/
+@media (max-width: 840px) {
+    .product-details-page .main-container {
         width: 95%;
     }
 
     .product-details-page .product-details-column {
         padding: 0.5rem;
+    }
+
+    .product-details-page .product-review-container {
+        width: 95%;
     }
 }

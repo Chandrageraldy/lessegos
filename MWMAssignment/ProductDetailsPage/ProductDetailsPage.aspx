@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ProductDetailsPage.aspx.cs" Inherits="MWMAssignment.WebForm8" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ProductDetailsPage.aspx.cs" Inherits="MWMAssignment.WebForm8" UnobtrusiveValidationMode="None" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../ProductDetailsPage/ProductDetailsPage.css" rel="stylesheet" />
@@ -81,8 +81,47 @@
                             <asp:Button runat="server" class="add-to-cart-button" Text="ADD TO CART" OnClick="addToCartButton_Click" ID="addToCartButton" />
                         </ContentTemplate>
                     </asp:UpdatePanel>
+                    <div class="review-row">
+                        <div></div>
+                        <button type="button" class="btn add-review-modal-button" data-bs-toggle="modal" data-bs-target="#addReviewModal">
+                            + Add Review
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
+        <section>
+            <div runat="server" id="productReviewContainer" class="product-review-container">
+                <h2>Product Review</h2>
+                <asp:Repeater ID="rptReviews" runat="server">
+                    <ItemTemplate>
+                        <div class="user-review-container">
+                            <asp:Label runat="server" ID="user" class="user" Text='<%# Eval("userName") %>'>></asp:Label>
+                            <asp:Label runat="server" ID="review" class="review" Text='<%# Eval("review") %>'>></asp:Label>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
+        </section>
+
+        <!-- MODAL -->
+        <div class="modal fade" id="addReviewModal" tabindex="-1" aria-labelledby="addReviewModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h3>ADD PRODUCT REVIEW</h3>
+                        <div class="title-text-field-container">
+                            <div class="title-row">
+                                <p class="text-field-title">REVIEW:</p>
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="review" ErrorMessage="* required" CssClass="validation-message" Display="Dynamic" ValidationGroup="reviewValidation"></asp:RequiredFieldValidator>
+                            </div>
+                            <asp:TextBox runat="server" ID="review" placeholder="" class="text-field" TextMode="MultiLine" ValidationGroup="reviewValidation"/>
+                        </div>
+                        <asp:Button runat="server" class="add-review-button" Text="Add Product Review" ID="addReviewButton" OnClick="addReviewButton_Click" ValidationGroup="reviewValidation"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- MODAL -->
     </div>
 </asp:Content>

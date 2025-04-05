@@ -25,35 +25,28 @@ namespace MWMAssignment
             }
         }
 
-        protected void LoadProducts()
+        protected void LoadProducts(string searchQuery = "")
         {
-            string connString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            con.Open();
 
-            using (SqlConnection con = new SqlConnection(connString))
-            {
-                string query = @"SELECT productId, productName, productPrice, productFrontImage, (ISNULL(productSSizeQuantity, 0) + ISNULL(productMSizeQuantity, 0) + ISNULL(productLSizeQuantity, 0) + ISNULL(productXLSizeQuantity, 0)) AS totalQuantity, isEnabled FROM productTable";
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
-                    {
-                        DataTable dt = new DataTable();
-                        sda.Fill(dt);
+            string query = @"SELECT productId, productName, productPrice, productFrontImage, (ISNULL(productSSizeQuantity, 0) + ISNULL(productMSizeQuantity, 0) + ISNULL(productLSizeQuantity, 0) + ISNULL(productXLSizeQuantity, 0)) AS totalQuantity, isEnabled FROM productTable WHERE productName LIKE @searchQuery OR productId LIKE @searchQuery";
+            SqlCommand command = new SqlCommand(query, con);
+            command.Parameters.AddWithValue("@searchQuery", "%" + searchQuery + "%");
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
 
-                        productGrid.DataSource = dt;
-                        productGrid.DataBind();
-                    }
-                }
-            }
+            DataTable dataTable = new DataTable();
+            dataAdapter.Fill(dataTable);
+
+            productGrid.DataSource = dataTable;
+            productGrid.DataBind();
+
+            con.Close();
         }
 
         protected void createNewButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("../CreateProductAdminPage/CreateProductAdminPage.aspx");
-        }
-
-        protected void editUserButton_Click(object sender, EventArgs e)
-        {
-
         }
 
         protected void confirmDeleteButton_Click(object sender, EventArgs e)
@@ -105,6 +98,12 @@ namespace MWMAssignment
             con.Close();
 
             Response.Redirect("../ManageProductsAdminPage/ManageProductsAdminPage.aspx");
+        }
+
+        protected void searchButton_Click(object sender, EventArgs e)
+        {
+            string searchQuery = searchTextField.Text.Trim();
+            LoadProducts(searchQuery);
         }
     }
 }
