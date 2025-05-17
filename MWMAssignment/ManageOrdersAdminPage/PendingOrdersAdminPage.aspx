@@ -43,7 +43,7 @@
 
         <!-- MANAGE ORDERS CONTAINER -->
         <section>
-            <div class="manage-orders-container">
+            <div class="manage-orders-container table-responsive">
                 <asp:GridView ID="manageOrdersGrid" runat="server" class="table" AutoGenerateColumns="False" EmptyDataText="No pending orders.">
                     <Columns>
                         <asp:TemplateField HeaderText="ID">

@@ -36,7 +36,7 @@
 
         <!-- MANAGE PRODUCTS CONTAINER -->
         <section>
-            <div class="manage-products-container">
+            <div class="manage-products-container table-responsive">
                 <asp:GridView ID="productGrid" runat="server" class="table"
                     AutoGenerateColumns="False" EmptyDataText="Your product listing is empty.">
                     <Columns>

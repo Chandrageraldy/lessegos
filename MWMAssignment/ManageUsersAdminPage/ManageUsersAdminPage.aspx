@@ -31,7 +31,7 @@
 
         <!-- MANAGE USERS CONTAINER -->
         <section>
-            <div class="manage-users-container">
+            <div class="manage-users-container table-responsive">
                 <asp:GridView ID="userGrid" runat="server" class="table"
                     AutoGenerateColumns="False" EmptyDataText="No user registered.">
                     <Columns>

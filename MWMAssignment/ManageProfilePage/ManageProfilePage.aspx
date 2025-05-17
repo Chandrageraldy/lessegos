@@ -113,7 +113,7 @@
                         <asp:TextBox runat="server" ID="cvv" placeholder="" class="text-field" />
                     </div>
                     <div class="col-xl-12 text-field-container">
-                        <asp:Button runat="server" class="update-profile-button" Text="Update Profile" ID="updateProfileButton" OnClick="updateProfileButton_Click" />
+                        <asp:Button runat="server" class="update-profile-button" Text="UPDATE PROFILE" ID="updateProfileButton" OnClick="updateProfileButton_Click" />
                         <asp:Label runat="server" ID="errorMessage" CssClass="error-message">Email already exists. Please use a different email.</asp:Label>
                     </div>
                 </div>
@@ -121,7 +121,7 @@
         </section>
 
         <section>
-            <div class="order-history-container">
+            <div class="order-history-container table-responsive">
                 <asp:Label runat="server" ID="orderHistoryHeader" CssClass="order-history-header">Order History</asp:Label>
                 <asp:GridView ID="orderHistoryGrid" runat="server" class="table" AutoGenerateColumns="False">
                     <Columns>

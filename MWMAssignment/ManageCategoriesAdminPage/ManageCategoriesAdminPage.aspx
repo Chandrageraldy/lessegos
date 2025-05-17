@@ -62,7 +62,7 @@
 
         <!-- MANAGE CATEGORIES CONTAINER -->
         <section>
-            <div class="manage-categories-container">
+            <div class="manage-categories-container table-responsive">
                 <asp:GridView ID="categoryGrid" runat="server" class="table"
                     AutoGenerateColumns="False" EmptyDataText="Your category listing is empty.">
                     <Columns>

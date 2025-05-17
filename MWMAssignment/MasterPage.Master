@@ -25,7 +25,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="banner">
-            <p class="banner-label">FREE SHIPPING ON ORDERS ABOVE 400K</p>
+            <p class="banner-label">CHECK OUT OUR LATEST COLLECTION</p>
         </div>
         <!-- NAVIGATION BAR -->
         <div class="navigation-bar">
@@ -45,9 +45,6 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="../CategoriesPage/CategoriesPage.aspx">CATEGORIES</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">ABOUT</a>
                             </li>
                         </ul>
                         <!-- RIGHT NAVIGATION BAR -->

@@ -14,6 +14,7 @@ namespace MWMAssignment
             if (Session["email"] != null)
             {
                 profileButton.Visible = true;
+                logoutButton.Visible = true;
                 signInButton.Visible = false;
                 profileButton.Text = Session["email"].ToString();
             }
@@ -21,11 +22,18 @@ namespace MWMAssignment
             {
                 signInButton.Visible = true;
                 profileButton.Visible = false;
+                logoutButton.Visible = false;
             }
         }
 
         protected void signInButton_Click(object sender, EventArgs e)
         {
+            Response.Redirect("../AuthAdminPage/LoginAdminPage.aspx");
+        }
+
+        protected void logoutButton_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
             Response.Redirect("../AuthAdminPage/LoginAdminPage.aspx");
         }
     }

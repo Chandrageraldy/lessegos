@@ -31,7 +31,7 @@
 
         <!-- MANAGE REVIEWS CONTAINER -->
         <section>
-            <div class="manage-reviews-container">
+            <div class="manage-reviews-container table-responsive">
                 <asp:GridView ID="reviewGrid" runat="server" class="table"
                     AutoGenerateColumns="False" EmptyDataText="No review.">
                     <Columns>
