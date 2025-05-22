@@ -8,7 +8,7 @@
         <section class="shopping-cart-section">
             <h2 class="shopping-cart-title">SHOPPING CART</h2>
             <div class="shopping-cart-container row">
-                <div class="col-xl-8 shopping-cart-grid">
+                <div class="col-xl-8 shopping-cart-grid table-responsive">
                     <asp:GridView ID="shoppingCartGrid" runat="server" class="table table-borderless"
                         AutoGenerateColumns="False" EmptyDataText="Your shopping cart is empty.">
                         <Columns>

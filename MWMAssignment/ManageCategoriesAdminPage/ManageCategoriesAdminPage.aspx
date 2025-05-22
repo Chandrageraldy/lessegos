@@ -87,7 +87,7 @@
                 <div class="modal-content">
                     <div class="modal-body">
                         <h4>Confirm Delete</h4>
-                        <p class="delete-message">Are you sure you want to permanently delete this category?</p>
+                        <p class="delete-message">Are you sure you want to permanently delete this category and all the products inside it?</p>
                         <div class="delete-modal-action-row">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                             <asp:Button runat="server" ID="confirmDeleteButton" CssClass="btn btn-danger" Text="Delete" OnClick="confirmDeleteButton_Click" />

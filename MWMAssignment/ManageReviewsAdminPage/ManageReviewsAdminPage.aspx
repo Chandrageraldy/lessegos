@@ -33,7 +33,7 @@
         <section>
             <div class="manage-reviews-container table-responsive">
                 <asp:GridView ID="reviewGrid" runat="server" class="table"
-                    AutoGenerateColumns="False" EmptyDataText="No review.">
+                    AutoGenerateColumns="False" EmptyDataText="No reviews.">
                     <Columns>
                         <asp:BoundField DataField="reviewId" HeaderText="ID" />
                         <asp:BoundField DataField="userName" HeaderText="Username" />

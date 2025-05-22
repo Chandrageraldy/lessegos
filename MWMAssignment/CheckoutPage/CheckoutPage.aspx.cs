@@ -69,14 +69,7 @@ namespace MWMAssignment
                     c.selectedSize, 
                     p.productPrice, 
                     c.selectedQuantity, 
-                    (p.productPrice * c.selectedQuantity) AS productTotal,
-                    CASE 
-                        WHEN c.selectedSize = 'S' THEN p.productSSizeQuantity
-                        WHEN c.selectedSize = 'M' THEN p.productMSizeQuantity
-                        WHEN c.selectedSize = 'L' THEN p.productLSizeQuantity
-                        WHEN c.selectedSize = 'XL' THEN p.productXLSizeQuantity
-                        ELSE 0
-                    END AS availableQuantity
+                    (p.productPrice * c.selectedQuantity) AS productTotal
                 FROM cartTable c
                 INNER JOIN productTable p ON c.productId = p.productId
                 WHERE c.userId = @userId AND p.isEnabled = 1";
